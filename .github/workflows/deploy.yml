@@ -30,7 +30,7 @@ jobs:
         uses: denoland/deployctl@v1
         with:
           project: "tomz-blog"
-          entrypoint: "main.ts"
+          entrypoint: "_fresh/main.ts"
           root: ""
           
           
