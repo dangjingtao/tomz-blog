@@ -1,6 +1,6 @@
 /** @jsxImportSource preact */
 import { useComputed, useSignal } from "@preact/signals";
-import { useEffect } from "preact/hooks";
+// import { useEffect } from "preact/hooks";
 
 const Home = () => {
   const menuOpen = useSignal(false);
@@ -11,28 +11,28 @@ const Home = () => {
     menuOpen.value = !menuOpen.value;
   };
 
-  useEffect(() => {
-    // Fetch the latest docs categories (mocked here)
-    docs.value = [
-      "Introduction",
-      "Getting Started",
-      "API Reference",
-      "Guides",
-      "Tutorials",
-      "Best Practices",
-      "FAQ",
-      "Release Notes",
-      "Changelog",
-      "Contributing",
-    ];
-  }, []);
+  // useEffect(() => {
+  //   // Fetch the latest docs categories (mocked here)
+  //   docs.value = [
+  //     // "Introduction",
+  //     // "Getting Started",
+  //     // "API Reference",
+  //     // "Guides",
+  //     // "Tutorials",
+  //     // "Best Practices",
+  //     // "FAQ",
+  //     // "Release Notes",
+  //     // "Changelog",
+  //     // "Contributing",
+  //   ];
+  // }, []);
 
-  useEffect(() => {
-    const interval = setInterval(() => {
-      currentIndex.value = (currentIndex.value + 1) % docs.value.length;
-    }, 3000); // Change slide every 3 seconds
-    return () => clearInterval(interval);
-  }, [docs]);
+  // useEffect(() => {
+  //   const interval = setInterval(() => {
+  //     currentIndex.value = (currentIndex.value + 1) % docs.value.length;
+  //   }, 3000); // Change slide every 3 seconds
+  //   return () => clearInterval(interval);
+  // }, [docs]);
 
   const visibleDocs = useComputed(() => {
     const start = currentIndex.value;
