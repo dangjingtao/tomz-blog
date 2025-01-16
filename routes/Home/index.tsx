@@ -1,38 +1,10 @@
 /** @jsxImportSource preact */
 import { useComputed, useSignal } from "@preact/signals";
-// import { useEffect } from "preact/hooks";
-
+import Header from "../../components/Header/index.tsx";
+import HomeBanner from "../../components/Banner/index.tsx";
 const Home = () => {
-  const menuOpen = useSignal(false);
   const docs = useSignal([]);
   const currentIndex = useSignal(0);
-
-  const toggleMenu = () => {
-    menuOpen.value = !menuOpen.value;
-  };
-
-  // useEffect(() => {
-  //   // Fetch the latest docs categories (mocked here)
-  //   docs.value = [
-  //     // "Introduction",
-  //     // "Getting Started",
-  //     // "API Reference",
-  //     // "Guides",
-  //     // "Tutorials",
-  //     // "Best Practices",
-  //     // "FAQ",
-  //     // "Release Notes",
-  //     // "Changelog",
-  //     // "Contributing",
-  //   ];
-  // }, []);
-
-  // useEffect(() => {
-  //   const interval = setInterval(() => {
-  //     currentIndex.value = (currentIndex.value + 1) % docs.value.length;
-  //   }, 3000); // Change slide every 3 seconds
-  //   return () => clearInterval(interval);
-  // }, [docs]);
 
   const visibleDocs = useComputed(() => {
     const start = currentIndex.value;
@@ -44,86 +16,8 @@ const Home = () => {
 
   return (
     <div className="text-center min-h-screen flex flex-col">
-      <header className="flex justify-between items-center p-4 bg-geekblue-7 text-white">
-        <div className="flex items-center gap-4">
-          <h1 className="m-0 text-2xl font-bold">TOMZ.IO</h1>
-          <nav
-            className={`${
-              menuOpen.value ? "block" : "hidden"
-            } md:flex gap-4 ml-4 transition-all duration-300 ease-in-out`}
-          >
-            <ul className="list-none p-0 m-0 flex flex-col md:flex-row gap-4">
-              <li>
-                <a
-                  href="#projects"
-                  className="text-white no-underline hover:underline"
-                >
-                  Projects
-                </a>
-              </li>
-              <li>
-                <a
-                  href="#docs"
-                  className="text-white no-underline hover:underline"
-                >
-                  Docs
-                </a>
-              </li>
-              <li>
-                <a
-                  href="#blogs"
-                  className="text-white no-underline hover:underline"
-                >
-                  Blogs
-                </a>
-              </li>
-              <li>
-                <a
-                  href="#about"
-                  className="text-white no-underline hover:underline"
-                >
-                  About
-                </a>
-              </li>
-            </ul>
-          </nav>
-        </div>
-        <div className="flex items-center gap-4">
-          <input
-            type="text"
-            placeholder="Search..."
-            className="p-2 rounded-md text-black transition-all duration-300 ease-in-out focus:outline-none focus:ring-2 focus:ring-geekblue-5"
-            style={{ height: "36px" }}
-          />
-          <button
-            className="bg-transparent border-none text-white text-lg md:hidden"
-            onClick={toggleMenu}
-          >
-            {menuOpen.value ? "Close" : "Menu"}
-          </button>
-        </div>
-      </header>
-      <div className="relative flex justify-center">
-        <div
-          className="bg-cover bg-center h-64 md:h-96 w-full"
-          style={{
-            maxWidth: "1600px",
-            backgroundImage: "url(./images/ComfyUI_08073_.png)",
-          }}
-        >
-          {
-            /* <div className="h-full flex items-center justify-center bg-geekblue-9 bg-opacity-0.1">
-          <h2 className="text-4xl text-white font-bold">Welcome to TOMZ.IO</h2>
-        </div> */
-          }
-        </div>
-        <div className="hidden lg:flex absolute inset-0 justify-between pointer-events-none">
-          <div className="w-1/4 h-full bg-gradient-to-r from-white to-transparent">
-          </div>
-          <div className="w-1/4 h-full bg-gradient-to-l from-white to-transparent">
-          </div>
-        </div>
-      </div>
+      <Header />
+      <HomeBanner />
       <main className="flex-grow p-4 bg-geekblue-1">
         <section className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4 my-8">
           <div className="p-4 bg-geekblue-2 shadow-md rounded-lg">
