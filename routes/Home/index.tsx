@@ -1,7 +1,7 @@
 /** @jsxImportSource preact */
 import { useComputed, useSignal } from "@preact/signals";
-import Header from "../../components/Header/index.tsx";
 import HomeBanner from "../../components/Banner/index.tsx";
+import Footer from "../../components/Footer/index.tsx";
 const Home = () => {
   const docs = useSignal([]);
   const currentIndex = useSignal(0);
@@ -15,10 +15,9 @@ const Home = () => {
   });
 
   return (
-    <div className="text-center min-h-screen flex flex-col">
-      <Header />
+    <>
       <HomeBanner />
-      <main className="flex-grow p-4 bg-geekblue-1">
+      <main className="flex-grow p-4">
         <section className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4 my-8">
           <div className="p-4 bg-geekblue-2 shadow-md rounded-lg">
             <h3 className="text-2xl font-bold text-geekblue-7">Feature 1</h3>
@@ -77,10 +76,7 @@ const Home = () => {
           <p className="text-lg text-geekblue-9">Learn more about me.</p>
         </section>
       </main>
-      <footer className="p-4 bg-geekblue-7 text-white">
-        <p>&copy; 2023 My Portfolio</p>
-      </footer>
-    </div>
+    </>
   );
 };
 
