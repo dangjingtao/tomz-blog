@@ -1,7 +1,6 @@
 /** @jsxImportSource preact */
 import { useComputed, useSignal } from "@preact/signals";
-import HomeBanner from "../../components/Banner/index.tsx";
-import Footer from "../../components/Footer/index.tsx";
+import HomeBanner from "@/components/Banner/index.tsx";
 const Home = () => {
   const docs = useSignal([]);
   const currentIndex = useSignal(0);

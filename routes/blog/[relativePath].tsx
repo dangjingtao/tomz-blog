@@ -3,6 +3,7 @@ import { PageProps } from "$fresh/server.ts";
 import { getPost, Post } from "@/utils/posts.ts";
 import { CSS, render } from "$gfm";
 import { Head } from "$fresh/runtime.ts";
+import { useScript, useStyle } from "$fresh/runtime.ts";
 
 export const handler: Handlers<Post> = {
   async GET(_req, ctx) {
@@ -32,8 +33,6 @@ const BlogPostSummary = ({ title, publishedAt, modifiedDate, snippet }) => {
 
 export default function PostPage(props: PageProps<Post>) {
   const post = props.data;
-
-  console.log("post", post);
   return (
     <div class="w-full md:w-[1440px] md:p-5 mx-auto">
       <Head>

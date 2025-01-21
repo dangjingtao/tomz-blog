@@ -1,6 +1,6 @@
 /** @jsxImportSource preact */
-import HeaderNav from "../../islands/HeaderNav.tsx";
-import HeaderSearch from "../../islands/HeaderSearch.tsx";
+import HeaderNav from "@/islands/HeaderNav.tsx";
+import HeaderSearch from "@/islands/HeaderSearch.tsx";
 
 const Header = () => {
   return (

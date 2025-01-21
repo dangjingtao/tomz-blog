@@ -5,17 +5,25 @@ import WindowCloseIcon from "@mdi-preact/WindowCloseIcon.js";
 import TranslateIcon from "@mdi-preact/TranslateIcon.js";
 import GithubIcon from "@mdi-preact/GithubIcon.js";
 import { JSX } from "preact/jsx-runtime";
-import { useCallback, useEffect } from "preact/hooks";
+import { useCallback } from "preact/hooks";
+import clientCache from "@/lib/clientCache.ts";
+import config from "@/config/index.ts";
+
+const { GITHUB_CLIENT_ID } = config.github;
 
 interface NavItemData {
   name: string | JSX.Element;
   href?: string;
   children?: NavItemData[];
   level?: number;
+  onClick?: () => void;
+  index?: number;
 }
 
 const PCNavItem = (
-  { itemData: { href, children, name, level = 1 } }: { itemData: NavItemData },
+  { itemData: { href, children, name, level = 1, onClick, index } }: {
+    itemData: NavItemData;
+  },
 ) => {
   const hasChildren = children && children.length > 0;
   const dropDownOpen = useSignal(false);
@@ -44,6 +52,7 @@ const PCNavItem = (
     >
       <div className="block w-full h-full">
         <a
+          onClick={onClick}
           href={href}
           target={href?.startsWith("http") ? "_blank" : "_self"}
           className={`block cursor-pointer h-full  ${
@@ -56,28 +65,56 @@ const PCNavItem = (
         </a>
       </div>
       {hasChildren && (
-        <ul
-          className={`${dropDownOpen.value ? "block" : "hidden"} absolute ${
-            level === 1 ? "left-0 top-full" : "left-full top-0"
-          } bg-white rounded shadow-lg min-w-48`}
-        >
+        <>
           <div
-            className="absolute w-0 h-0 border-l-8 border-l-transparent border-r-8 border-r-transparent border-b-8 border-b-white"
+            className="absolute w-0 h-0 z-50 border-l-8 border-l-transparent border-r-8 border-r-transparent border-b-8 border-b-white"
             style={{ top: "-8px", left: "20px" }}
           />
-          {children.map((child, i) => (
-            <PCNavItem
-              key={i}
-              itemData={{ ...child, level: level + 1 }}
-            />
-          ))}
-        </ul>
+          <ul
+            className={`${dropDownOpen.value ? "block" : "hidden"} absolute ${
+              level === 1
+                ? `top-full ${index === 5 ? "right-0" : "left-0"}`
+                : "left-full top-0"
+            } bg-white rounded shadow-lg min-w-48`}
+          >
+            {children.map((child, i) => (
+              <PCNavItem
+                key={i}
+                itemData={{ ...child, level: level + 1 }}
+              />
+            ))}
+          </ul>
+        </>
       )}
     </li>
   );
 };
 
 const HeaderNav = () => {
+  const handleGithubLogin = () => {
+    const REDIRECT_URI = `${globalThis.location.origin}/auth`;
+    const githubAuthUrl =
+      `https://github.com/login/oauth/authorize?client_id=${GITHUB_CLIENT_ID}&redirect_uri=${REDIRECT_URI}&scope=read:user`;
+    globalThis.location.href = githubAuthUrl;
+  };
+
+  const handleSignOut = () => {
+    clientCache.set("userInfo", "");
+    globalThis.location.href = "/";
+  };
+
+  const userInfo = clientCache.get("userInfo");
+  const loginDropDown = userInfo
+    ? {
+      name: "Sign out",
+      onClick: handleSignOut,
+    }
+    : {
+      name: "Github",
+      onClick: handleGithubLogin,
+    };
+  console.log(userInfo);
+
   const navData = [
     {
       name: "Docs",
@@ -108,6 +145,17 @@ const HeaderNav = () => {
       name: <GithubIcon />,
       href: "https://github.com/dangjingtao/tomz-blog",
     },
+    {
+      name: !userInfo ? "Sign in" : (
+        <div class="flex gap-1">
+          {/* <div>{userInfo.login}</div> */}
+          <img class="w-6 rounded-full" src={userInfo.avatar_url} />
+        </div>
+      ),
+      children: [
+        loginDropDown,
+      ],
+    },
   ];
 
   const menuOpen = useSignal(false);
@@ -122,8 +170,11 @@ const HeaderNav = () => {
         className={`absolute right-5 hidden md:flex gap-4 ml-4 transition-all duration-300 ease-in-out h-full`}
       >
         <ul className="list-none p-0 m-0 flex flex-col md:flex-row h-full">
-          {navData.map(({ name, href, children }, i) => (
-            <PCNavItem key={i} itemData={{ name, href, children }} />
+          {navData.map(({ name, href, children, onClick }, i) => (
+            <PCNavItem
+              key={i}
+              itemData={{ name, href, children, onClick, index: i }}
+            />
           ))}
         </ul>
       </nav>
