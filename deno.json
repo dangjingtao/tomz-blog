@@ -22,6 +22,7 @@
   ],
   "imports": {
     "$fresh/": "https://deno.land/x/fresh@1.7.3/",
+    "$fresh": "https://deno.land/x/fresh@1.7.3",
     "@mdi-preact": "npm:mdi-preact",
     "@std/encoding": "jsr:@std/encoding@^1.0.6",
     "@sys/fs": "jsr:@sys/fs@^0.0.42",

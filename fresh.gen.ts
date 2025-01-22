@@ -7,6 +7,7 @@ import * as $_404 from "./routes/_404.tsx";
 import * as $_500 from "./routes/_500.tsx";
 import * as $_app from "./routes/_app.tsx";
 import * as $_layout from "./routes/_layout.tsx";
+import * as $_middleware from "./routes/_middleware.ts";
 import * as $api_index from "./routes/api/index.ts";
 import * as $api_user_auth from "./routes/api/user/auth.ts";
 import * as $api_user_index from "./routes/api/user/index.ts";
@@ -16,12 +17,15 @@ import * as $blog_relativePath_ from "./routes/blog/[relativePath].tsx";
 import * as $blog_index from "./routes/blog/index.tsx";
 import * as $greet_name_ from "./routes/greet/[name].tsx";
 import * as $index from "./routes/index.tsx";
+import * as $setting_layout from "./routes/setting/_layout.tsx";
 import * as $setting_index from "./routes/setting/index.tsx";
+import * as $setting_user_index from "./routes/setting/user/index.tsx";
 import * as $Auth from "./islands/Auth.tsx";
 import * as $HeaderNav from "./islands/HeaderNav.tsx";
 import * as $HeaderSearch from "./islands/HeaderSearch.tsx";
 import * as $MarkdownPageRenderer from "./islands/MarkdownPageRenderer.tsx";
 import * as $Pagination from "./islands/Pagination.tsx";
+import * as $sideNav from "./islands/sideNav.tsx";
 import type { Manifest } from "$fresh/server.ts";
 
 const manifest = {
@@ -31,6 +35,7 @@ const manifest = {
     "./routes/_500.tsx": $_500,
     "./routes/_app.tsx": $_app,
     "./routes/_layout.tsx": $_layout,
+    "./routes/_middleware.ts": $_middleware,
     "./routes/api/index.ts": $api_index,
     "./routes/api/user/auth.ts": $api_user_auth,
     "./routes/api/user/index.ts": $api_user_index,
@@ -40,7 +45,9 @@ const manifest = {
     "./routes/blog/index.tsx": $blog_index,
     "./routes/greet/[name].tsx": $greet_name_,
     "./routes/index.tsx": $index,
+    "./routes/setting/_layout.tsx": $setting_layout,
     "./routes/setting/index.tsx": $setting_index,
+    "./routes/setting/user/index.tsx": $setting_user_index,
   },
   islands: {
     "./islands/Auth.tsx": $Auth,
@@ -48,6 +55,7 @@ const manifest = {
     "./islands/HeaderSearch.tsx": $HeaderSearch,
     "./islands/MarkdownPageRenderer.tsx": $MarkdownPageRenderer,
     "./islands/Pagination.tsx": $Pagination,
+    "./islands/sideNav.tsx": $sideNav,
   },
   baseUrl: import.meta.url,
 } satisfies Manifest;
