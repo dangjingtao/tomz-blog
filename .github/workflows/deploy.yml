@@ -24,13 +24,13 @@ jobs:
           deno-version: v2.x
 
       - name: Build step
-        run: "deno task build"
+        run: "_fresh"
 
       - name: Upload to Deno Deploy
         uses: denoland/deployctl@v1
         with:
           project: "tomz-blog"
-          entrypoint: "main.ts"
-          root: "."
+          entrypoint: "main.js"
+          root: ""
           
           
