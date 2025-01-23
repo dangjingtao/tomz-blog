@@ -10,12 +10,15 @@ import * as $_layout from "./routes/_layout.tsx";
 import * as $api_joke from "./routes/api/joke.ts";
 import * as $blog_relativePath_ from "./routes/blog/[relativePath].tsx";
 import * as $blog_index from "./routes/blog/index.tsx";
-import * as $greet_name_ from "./routes/greet/[name].tsx";
 import * as $index from "./routes/index.tsx";
+import * as $setting_layout from "./routes/setting/_layout.tsx";
+import * as $setting_index from "./routes/setting/index.tsx";
+import * as $setting_user_index from "./routes/setting/user/index.tsx";
 import * as $HeaderNav from "./islands/HeaderNav.tsx";
 import * as $HeaderSearch from "./islands/HeaderSearch.tsx";
 import * as $MarkdownPageRenderer from "./islands/MarkdownPageRenderer.tsx";
 import * as $Pagination from "./islands/Pagination.tsx";
+import * as $sideNav from "./islands/sideNav.tsx";
 import type { Manifest } from "$fresh/server.ts";
 
 const manifest = {
@@ -28,14 +31,17 @@ const manifest = {
     "./routes/api/joke.ts": $api_joke,
     "./routes/blog/[relativePath].tsx": $blog_relativePath_,
     "./routes/blog/index.tsx": $blog_index,
-    "./routes/greet/[name].tsx": $greet_name_,
     "./routes/index.tsx": $index,
+    "./routes/setting/_layout.tsx": $setting_layout,
+    "./routes/setting/index.tsx": $setting_index,
+    "./routes/setting/user/index.tsx": $setting_user_index,
   },
   islands: {
     "./islands/HeaderNav.tsx": $HeaderNav,
     "./islands/HeaderSearch.tsx": $HeaderSearch,
     "./islands/MarkdownPageRenderer.tsx": $MarkdownPageRenderer,
     "./islands/Pagination.tsx": $Pagination,
+    "./islands/sideNav.tsx": $sideNav,
   },
   baseUrl: import.meta.url,
 } satisfies Manifest;
