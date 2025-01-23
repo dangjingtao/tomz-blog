@@ -1,9 +1,9 @@
 name: Deploy
 on:
   push:
-    branches: fallback
+    branches: fallback_dev
   pull_request:
-    branches: fallback
+    branches: fallback_dev
 
 jobs:
   deploy:
