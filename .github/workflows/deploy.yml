@@ -23,6 +23,19 @@ jobs:
         with:
           deno-version: v1.x
 
+      - name: Cache npm dependencies
+        uses: actions/cache@v2
+        with:
+          path: ~/.npm
+          key: ${{ runner.os }}-npm-cache
+          restore-keys: |
+            ${{ runner.os }}-npm-cache
+
+      - name: Install dependencies
+        run: |
+          npm config set registry https://registry.npm.taobao.org
+          deno cache main.ts
+
       - name: Build step
         run: "deno task build"
 
@@ -32,5 +45,3 @@ jobs:
           project: "tomz-blog"
           entrypoint: "main.ts"
           root: ""
-          
-          
