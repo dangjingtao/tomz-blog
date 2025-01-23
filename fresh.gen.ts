@@ -7,13 +7,19 @@ import * as $_404 from "./routes/_404.tsx";
 import * as $_500 from "./routes/_500.tsx";
 import * as $_app from "./routes/_app.tsx";
 import * as $_layout from "./routes/_layout.tsx";
+import * as $api_auth_layout from "./routes/api/auth/_layout.tsx";
+import * as $api_auth_index from "./routes/api/auth/index.tsx";
 import * as $api_joke from "./routes/api/joke.ts";
+import * as $api_user_auth from "./routes/api/user/auth.ts";
+import * as $auth_layout from "./routes/auth/_layout.tsx";
+import * as $auth_index from "./routes/auth/index.tsx";
 import * as $blog_relativePath_ from "./routes/blog/[relativePath].tsx";
 import * as $blog_index from "./routes/blog/index.tsx";
 import * as $index from "./routes/index.tsx";
 import * as $setting_layout from "./routes/setting/_layout.tsx";
 import * as $setting_index from "./routes/setting/index.tsx";
 import * as $setting_user_index from "./routes/setting/user/index.tsx";
+import * as $Auth from "./islands/Auth.tsx";
 import * as $HeaderNav from "./islands/HeaderNav.tsx";
 import * as $HeaderSearch from "./islands/HeaderSearch.tsx";
 import * as $MarkdownPageRenderer from "./islands/MarkdownPageRenderer.tsx";
@@ -28,7 +34,12 @@ const manifest = {
     "./routes/_500.tsx": $_500,
     "./routes/_app.tsx": $_app,
     "./routes/_layout.tsx": $_layout,
+    "./routes/api/auth/_layout.tsx": $api_auth_layout,
+    "./routes/api/auth/index.tsx": $api_auth_index,
     "./routes/api/joke.ts": $api_joke,
+    "./routes/api/user/auth.ts": $api_user_auth,
+    "./routes/auth/_layout.tsx": $auth_layout,
+    "./routes/auth/index.tsx": $auth_index,
     "./routes/blog/[relativePath].tsx": $blog_relativePath_,
     "./routes/blog/index.tsx": $blog_index,
     "./routes/index.tsx": $index,
@@ -37,6 +48,7 @@ const manifest = {
     "./routes/setting/user/index.tsx": $setting_user_index,
   },
   islands: {
+    "./islands/Auth.tsx": $Auth,
     "./islands/HeaderNav.tsx": $HeaderNav,
     "./islands/HeaderSearch.tsx": $HeaderSearch,
     "./islands/MarkdownPageRenderer.tsx": $MarkdownPageRenderer,
