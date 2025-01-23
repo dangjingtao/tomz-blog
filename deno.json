@@ -4,9 +4,9 @@
     "check": "deno fmt --check && deno lint && deno check **/*.ts && deno check **/*.tsx",
     "cli": "echo \"import '\\$fresh/src/dev/cli.ts'\" | deno run --unstable -A -",
     "manifest": "deno task cli manifest $(pwd)",
-    "start": "deno run --unstable-kv -A --watch=static/,routes/ dev.ts",
+    "start": "deno run --unstable-kv --allow-env -A --watch=static/,routes/ dev.ts",
     "build": "deno run dev.ts build",
-    "preview": "deno run --unstable-kv -A main.ts",
+    "preview": "deno run --unstable-kv --allow-env -A main.ts",
     "update": "deno run -A -r https://fresh.deno.dev/update ."
   },
   "lint": {
