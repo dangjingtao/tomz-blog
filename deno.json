@@ -5,8 +5,8 @@
     "cli": "echo \"import '\\$fresh/src/dev/cli.ts'\" | deno run --unstable -A -",
     "manifest": "deno task cli manifest $(pwd)",
     "start": "deno run --unstable-kv -A --watch=static/,routes/ dev.ts",
-    "build": "deno run --unstable-kv -A dev.ts build",
-    "preview": "deno run -A main.ts",
+    "build": "deno run dev.ts build",
+    "preview": "deno run --unstable-kv -A main.ts",
     "update": "deno run -A -r https://fresh.deno.dev/update ."
   },
   "lint": {
@@ -21,13 +21,13 @@
     "**/_fresh/*"
   ],
   "imports": {
+    "preact": "npm:preact@^10.25.1",
+    "preact-render-to-string": "npm:preact-render-to-string@^6.5.11",
+    "@preact/signals": "npm:@preact/signals@^1.2.3",
     "$fresh/": "https://deno.land/x/fresh@1.7.3/",
     "@mdi-preact": "npm:mdi-preact",
     "@std/encoding": "jsr:@std/encoding@^1.0.6",
     "@sys/fs": "jsr:@sys/fs@^0.0.42",
-    "preact": "npm:preact@^10.24.3",
-    "@preact/signals": "https://esm.sh/*@preact/signals@1.2.2",
-    "@preact/signals-core": "https://esm.sh/*@preact/signals-core@1.5.1",
     "tailwindcss": "npm:tailwindcss@3.4.1",
     "tailwindcss/": "npm:/tailwindcss@3.4.1/",
     "tailwindcss/plugin": "npm:/tailwindcss@3.4.1/plugin.js",
