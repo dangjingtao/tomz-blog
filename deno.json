@@ -5,7 +5,7 @@
     "cli": "echo \"import '\\$fresh/src/dev/cli.ts'\" | deno run --unstable -A -",
     "manifest": "deno task cli manifest $(pwd)",
     "start": "deno run --unstable-kv --allow-env -A --watch=static/,routes/ dev.ts",
-    "build": "deno run --allow-read --allow-run --allow-env --allow-write --unstable-kv dev.ts build",
+    "build": "deno run --allow-read --allow-run --allow-env --allow-write --unstable-kv --allow-sys dev.ts build",
     "preview": "deno run --unstable-kv --allow-env -A main.ts",
     "update": "deno run -A -r https://fresh.deno.dev/update ."
   },
