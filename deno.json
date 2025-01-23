@@ -4,8 +4,8 @@
     "check": "deno fmt --check && deno lint && deno check **/*.ts && deno check **/*.tsx",
     "cli": "echo \"import '\\$fresh/src/dev/cli.ts'\" | deno run --unstable -A -",
     "manifest": "deno task cli manifest $(pwd)",
-    "start": "deno run --unstable-kv -A --watch=static/,routes/ dev.ts",
-    "build": "deno run --allow-read --allow-run --allow-env --allow-write --unstable-kv --allow-sys --allow-net dev.ts build",
+    "start": "deno run -A --watch=static/,routes/ dev.ts",
+    "build": "deno run -A dev.ts build",
     "preview": "deno run -A main.ts",
     "update": "deno run -A -r https://fresh.deno.dev/update ."
   },
@@ -22,7 +22,6 @@
   ],
   "imports": {
     "$fresh/": "https://deno.land/x/fresh@1.7.3/",
-    "$fresh": "https://deno.land/x/fresh@1.7.3",
     "@mdi-preact": "npm:mdi-preact",
     "@std/encoding": "jsr:@std/encoding@^1.0.6",
     "@sys/fs": "jsr:@sys/fs@^0.0.42",
