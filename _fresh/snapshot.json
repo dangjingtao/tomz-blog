@@ -1,0 +1,63 @@
+{
+  "build_id": "fbb021d9d5db7cbc5ceccbf4e82626c6895b5658",
+  "files": {
+    "main.js": [
+      "chunk-BSG23BUC.js",
+      "chunk-VOOYVNLC.js"
+    ],
+    "deserializer.js": [
+      "chunk-VOOYVNLC.js"
+    ],
+    "signals.js": [
+      "chunk-JX4O5VW4.js",
+      "chunk-J5P25FDZ.js",
+      "chunk-BSG23BUC.js",
+      "chunk-VOOYVNLC.js"
+    ],
+    "island-auth.js": [
+      "chunk-J5P25FDZ.js",
+      "chunk-ZJFVKZRZ.js",
+      "chunk-BSG23BUC.js",
+      "chunk-VOOYVNLC.js"
+    ],
+    "island-headernav.js": [
+      "chunk-JX4O5VW4.js",
+      "chunk-J5P25FDZ.js",
+      "chunk-ZJFVKZRZ.js",
+      "chunk-BSG23BUC.js",
+      "chunk-VOOYVNLC.js"
+    ],
+    "chunk-JX4O5VW4.js": [
+      "chunk-J5P25FDZ.js",
+      "chunk-BSG23BUC.js"
+    ],
+    "island-headersearch.js": [
+      "chunk-J5P25FDZ.js",
+      "chunk-ZJFVKZRZ.js",
+      "chunk-BSG23BUC.js",
+      "chunk-VOOYVNLC.js"
+    ],
+    "island-pagination.js": [
+      "chunk-ZJFVKZRZ.js",
+      "chunk-BSG23BUC.js",
+      "chunk-VOOYVNLC.js"
+    ],
+    "island-sidenav.js": [
+      "chunk-J5P25FDZ.js",
+      "chunk-ZJFVKZRZ.js",
+      "chunk-BSG23BUC.js",
+      "chunk-VOOYVNLC.js"
+    ],
+    "chunk-J5P25FDZ.js": [
+      "chunk-BSG23BUC.js"
+    ],
+    "chunk-ZJFVKZRZ.js": [
+      "chunk-BSG23BUC.js"
+    ],
+    "chunk-BSG23BUC.js": [
+      "chunk-VOOYVNLC.js"
+    ],
+    "chunk-VOOYVNLC.js": [],
+    "metafile.json": []
+  }
+}
