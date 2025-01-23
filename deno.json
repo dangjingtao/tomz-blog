@@ -22,6 +22,8 @@
   ],
   "imports": {
     "$fresh/": "https://deno.land/x/fresh@1.7.3/",
+    "$dotenv": "https://deno.land/x/dotenv@v3.2.2/mod.ts",
+    "$cookie": "https://deno.land/std/http/cookie.ts",
     "@mdi-preact": "npm:mdi-preact",
     "@std/encoding": "jsr:@std/encoding@^1.0.6",
     "@sys/fs": "jsr:@sys/fs@^0.0.42",

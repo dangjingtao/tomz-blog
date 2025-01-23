@@ -1,12 +1,12 @@
 import request from "@/lib/request.ts";
 import config from "@/config/index.ts";
 
-const { GITHUB_CLIENT_ID, GITHUB_ACCESS_TOKEN_URL, GITHUB_USER_API_URL } =
-  config.github;
-
-const GITHUB_SECRET = "eb15bfa456ac37b0c0e86cda1684c0ee19980ba1";
-
-Deno.env.set("HTTPS_PROXY", "http://127.0.0.1:1080");
+const {
+  GITHUB_CLIENT_ID,
+  GITHUB_ACCESS_TOKEN_URL,
+  GITHUB_USER_API_URL,
+  GITHUB_SECRET,
+} = config.github;
 
 export const auth = async (code: string) => {
   try {
