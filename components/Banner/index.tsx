@@ -1,26 +1,26 @@
+import T from "@/lib/Translate.ts";
+import CFG from "@/config/index.ts";
+
 const HomeBanner = () => {
   return (
-    <div className="relative flex justify-center">
+    <div className="relative flex justify-center items-center h-64 md:h-96 w-full">
       <div
-        className="bg-cover bg-center h-64 md:h-96 w-full"
+        className="absolute inset-0 bg-cover bg-center"
         style={{
-          maxWidth: "1600px",
-          backgroundImage: "url(./images/ComfyUI_08073_.png)",
+          backgroundImage:
+            "url(https://sf-coze-web-cdn.coze.com/obj/coze-web-us/mf/marketplace/static/image/landing-banner-full.a83495ac.jpeg)",
         }}
       >
-        {
-          /* <div className="h-full flex items-center justify-center bg-geekblue-3 ">
-            <h2 className="text-4xl text-geekblue-7 font-bold">
-              Welcome to TOMZ.IO
-            </h2>
-          </div> */
-        }
       </div>
-      <div className="hidden lg:flex absolute inset-0 justify-between pointer-events-none">
-        <div className="w-1/4 h-full bg-gradient-to-r from-white to-transparent">
-        </div>
-        <div className="w-1/4 h-full bg-gradient-to-l from-white to-transparent">
-        </div>
+      <div className="absolute inset-0 bg-black opacity-50"></div>
+      <div className="relative z-10 text-center text-white p-4 flex flex-col items-center">
+        <img src="/svgs/logo.svg" className="mb-4 w-16 h-16 md:w-24 md:h-24" />
+        <h1 className="text-2xl md:text-4xl font-bold">
+          {T(`Tomz's Notion Blog`)}
+        </h1>
+        <p className="text-lg md:text-2xl mt-2">
+          {T(`Blazing Fresh Notion Blog with Deno and Preact`)}
+        </p>
       </div>
     </div>
   );

@@ -31,7 +31,7 @@ function PostCard(props: { post: Post }) {
   const { coverImage } = post;
   return (
     <div class="py-8 border(t gray-200) flex flex-col md:flex-row gap-8">
-      <time class="hidden md:block text-gray-500 border-r border-r-gray-300 w-full md:w-1/4">
+      <time class="hidden md:block text-gray-500 border-r border-r-gray-300 w-full md:w-1/4 text-center">
         {new Date(post.publishedAt).toLocaleDateString("en-us", {
           year: "numeric",
           month: "long",
@@ -76,10 +76,10 @@ export default function BlogIndexPage(props: PageProps<Post[]>) {
       <div
         class="bg-slate-300 md:h-36 bg-url"
         style={{
-          backgroundImage:
-            "url(https://sf-coze-web-cdn.coze.com/obj/coze-web-us/mf/marketplace/static/image/landing-banner-full.a83495ac.jpeg)",
+          backgroundImage: "url(/images/blog.jpg)",
+          // "url(https://sf-coze-web-cdn.coze.com/obj/coze-web-us/mf/marketplace/static/image/landing-banner-full.a83495ac.jpeg)",
           backgroundSize: "cover",
-          backgroundPosition: "center top",
+          backgroundPosition: "center",
           transform: "scaleX(-1)",
         }}
       >

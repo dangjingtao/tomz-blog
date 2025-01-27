@@ -8,6 +8,7 @@ import * as $_500 from "./routes/_500.tsx";
 import * as $_app from "./routes/_app.tsx";
 import * as $_layout from "./routes/_layout.tsx";
 import * as $_middleware from "./routes/_middleware.ts";
+import * as $about_index from "./routes/about/index.tsx";
 import * as $api_index from "./routes/api/index.ts";
 import * as $api_user_auth from "./routes/api/user/auth.ts";
 import * as $api_user_index from "./routes/api/user/index.ts";
@@ -36,6 +37,7 @@ const manifest = {
     "./routes/_app.tsx": $_app,
     "./routes/_layout.tsx": $_layout,
     "./routes/_middleware.ts": $_middleware,
+    "./routes/about/index.tsx": $about_index,
     "./routes/api/index.ts": $api_index,
     "./routes/api/user/auth.ts": $api_user_auth,
     "./routes/api/user/index.ts": $api_user_index,

@@ -4,6 +4,7 @@ import { getPost, Post } from "@/utils/posts.ts";
 import { CSS, render } from "$gfm";
 import { Head } from "$fresh/runtime.ts";
 import { useScript, useStyle } from "$fresh/runtime.ts";
+import Helmet from "preact-helmet";
 
 export const handler: Handlers<Post> = {
   async GET(_req, ctx) {
@@ -38,6 +39,7 @@ export default function PostPage(props: PageProps<Post>) {
       <Head>
         <style dangerouslySetInnerHTML={{ __html: CSS }} />
       </Head>
+      <Helmet title="My Title" />
       <div className="text-left flex flex-col md:flex-row gap-3">
         <div className="flex-1">
           <BlogPostSummary {...post} />

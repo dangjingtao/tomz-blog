@@ -1,0 +1,317 @@
+{
+  "id": "",
+  "name": "",
+  "font_family": "iconfont",
+  "css_prefix_text": "icon-",
+  "description": "",
+  "glyphs": [
+    {
+      "icon_id": "9520746",
+      "name": "集群",
+      "font_class": "jiqun",
+      "unicode": "e625",
+      "unicode_decimal": 58917
+    },
+    {
+      "icon_id": "9520747",
+      "name": "容器",
+      "font_class": "rongqi",
+      "unicode": "e626",
+      "unicode_decimal": 58918
+    },
+    {
+      "icon_id": "9520748",
+      "name": "设置",
+      "font_class": "shezhi",
+      "unicode": "e627",
+      "unicode_decimal": 58919
+    },
+    {
+      "icon_id": "9520749",
+      "name": "应用",
+      "font_class": "yingyong",
+      "unicode": "e628",
+      "unicode_decimal": 58920
+    },
+    {
+      "icon_id": "9520750",
+      "name": "主机",
+      "font_class": "zhuji",
+      "unicode": "e629",
+      "unicode_decimal": 58921
+    },
+    {
+      "icon_id": "9520751",
+      "name": "虚拟机",
+      "font_class": "xuniji",
+      "unicode": "e62a",
+      "unicode_decimal": 58922
+    },
+    {
+      "icon_id": "9520816",
+      "name": "圆点",
+      "font_class": "yuandian",
+      "unicode": "e62b",
+      "unicode_decimal": 58923
+    },
+    {
+      "icon_id": "15035370",
+      "name": "数据库",
+      "font_class": "ico_Mysgl",
+      "unicode": "e67a",
+      "unicode_decimal": 59002
+    },
+    {
+      "icon_id": "15035371",
+      "name": "多用户",
+      "font_class": "ico_people",
+      "unicode": "e67b",
+      "unicode_decimal": 59003
+    },
+    {
+      "icon_id": "15035372",
+      "name": "产品",
+      "font_class": "ico_product",
+      "unicode": "e67c",
+      "unicode_decimal": 59004
+    },
+    {
+      "icon_id": "15035414",
+      "name": "添加",
+      "font_class": "ico_add",
+      "unicode": "e67d",
+      "unicode_decimal": 59005
+    },
+    {
+      "icon_id": "15035626",
+      "name": "监控",
+      "font_class": "ico_monitoring",
+      "unicode": "e67e",
+      "unicode_decimal": 59006
+    },
+    {
+      "icon_id": "15035627",
+      "name": "电话",
+      "font_class": "ico_phone",
+      "unicode": "e67f",
+      "unicode_decimal": 59007
+    },
+    {
+      "icon_id": "15035628",
+      "name": "邮件",
+      "font_class": "ico_Email",
+      "unicode": "e680",
+      "unicode_decimal": 59008
+    },
+    {
+      "icon_id": "15035629",
+      "name": "客服",
+      "font_class": "ico_contact",
+      "unicode": "e681",
+      "unicode_decimal": 59009
+    },
+    {
+      "icon_id": "15035630",
+      "name": "效率火箭",
+      "font_class": "ico_efficient",
+      "unicode": "e682",
+      "unicode_decimal": 59010
+    },
+    {
+      "icon_id": "15035678",
+      "name": "域名搜索",
+      "font_class": "ico_tool06",
+      "unicode": "e683",
+      "unicode_decimal": 59011
+    },
+    {
+      "icon_id": "15035679",
+      "name": "云应用搜索",
+      "font_class": "ico_tool05",
+      "unicode": "e684",
+      "unicode_decimal": 59012
+    },
+    {
+      "icon_id": "15035680",
+      "name": "Docker搜索",
+      "font_class": "ico_tool03",
+      "unicode": "e685",
+      "unicode_decimal": 59013
+    },
+    {
+      "icon_id": "15035681",
+      "name": "网络",
+      "font_class": "ico_tool04",
+      "unicode": "e686",
+      "unicode_decimal": 59014
+    },
+    {
+      "icon_id": "15035682",
+      "name": "k8s",
+      "font_class": "ico_tool02",
+      "unicode": "e687",
+      "unicode_decimal": 59015
+    },
+    {
+      "icon_id": "15035683",
+      "name": "配置",
+      "font_class": "ico_tool01",
+      "unicode": "e688",
+      "unicode_decimal": 59016
+    },
+    {
+      "icon_id": "15042891",
+      "name": "熔断器",
+      "font_class": "rongduanqi",
+      "unicode": "e689",
+      "unicode_decimal": 59017
+    },
+    {
+      "icon_id": "15042893",
+      "name": "配置服务",
+      "font_class": "peizhifuwu",
+      "unicode": "e68a",
+      "unicode_decimal": 59018
+    },
+    {
+      "icon_id": "15042894",
+      "name": "链路跟踪",
+      "font_class": "lianlugenzong",
+      "unicode": "e68b",
+      "unicode_decimal": 59019
+    },
+    {
+      "icon_id": "15042895",
+      "name": "服务注册",
+      "font_class": "fuwuzhuce",
+      "unicode": "e68c",
+      "unicode_decimal": 59020
+    },
+    {
+      "icon_id": "15043196",
+      "name": "网关",
+      "font_class": "wangguan",
+      "unicode": "e68d",
+      "unicode_decimal": 59021
+    },
+    {
+      "icon_id": "15123941",
+      "name": "存放同业",
+      "font_class": "ico_money_market",
+      "unicode": "e68e",
+      "unicode_decimal": 59022
+    },
+    {
+      "icon_id": "15123942",
+      "name": "电子对账",
+      "font_class": "ico_nr",
+      "unicode": "e68f",
+      "unicode_decimal": 59023
+    },
+    {
+      "icon_id": "15123943",
+      "name": "贸易融资",
+      "font_class": "ico_trade_finance",
+      "unicode": "e690",
+      "unicode_decimal": 59024
+    },
+    {
+      "icon_id": "15123944",
+      "name": "  贷款管理",
+      "font_class": "ico_loan_management",
+      "unicode": "e691",
+      "unicode_decimal": 59025
+    },
+    {
+      "icon_id": "15123945",
+      "name": " 额度管理",
+      "font_class": "ico_limit_management",
+      "unicode": "e692",
+      "unicode_decimal": 59026
+    },
+    {
+      "icon_id": "15123946",
+      "name": "转账汇款 ",
+      "font_class": "ico_funds_transfer",
+      "unicode": "e693",
+      "unicode_decimal": 59027
+    },
+    {
+      "icon_id": "15123947",
+      "name": "电子账单",
+      "font_class": "ico_e_advice",
+      "unicode": "e694",
+      "unicode_decimal": 59028
+    },
+    {
+      "icon_id": "15123948",
+      "name": " 外汇买卖",
+      "font_class": "ico_forex_deal",
+      "unicode": "e695",
+      "unicode_decimal": 59029
+    },
+    {
+      "icon_id": "15123949",
+      "name": "日结检查",
+      "font_class": "ico_daily_check",
+      "unicode": "e696",
+      "unicode_decimal": 59030
+    },
+    {
+      "icon_id": "15123950",
+      "name": " 存款管理 ",
+      "font_class": "ico_deposit_management",
+      "unicode": "e697",
+      "unicode_decimal": 59031
+    },
+    {
+      "icon_id": "15223394",
+      "name": "流动性管理",
+      "font_class": "ico_ttms",
+      "unicode": "e698",
+      "unicode_decimal": 59032
+    },
+    {
+      "icon_id": "15223395",
+      "name": "批量记账",
+      "font_class": "ico_bulk_accounting",
+      "unicode": "e699",
+      "unicode_decimal": 59033
+    },
+    {
+      "icon_id": "15223396",
+      "name": "报表市场",
+      "font_class": "ico_report_market",
+      "unicode": "e69a",
+      "unicode_decimal": 59034
+    },
+    {
+      "icon_id": "15223397",
+      "name": "公司查册",
+      "font_class": "ico_company_search",
+      "unicode": "e69b",
+      "unicode_decimal": 59035
+    },
+    {
+      "icon_id": "15223398",
+      "name": "自动收费",
+      "font_class": "ico_automatic_charging",
+      "unicode": "e69c",
+      "unicode_decimal": 59036
+    },
+    {
+      "icon_id": "15223399",
+      "name": "通用补录",
+      "font_class": "ico_oms_pro",
+      "unicode": "e69d",
+      "unicode_decimal": 59037
+    },
+    {
+      "icon_id": "15223400",
+      "name": "不动户管理",
+      "font_class": "ico_real_estate_management",
+      "unicode": "e69e",
+      "unicode_decimal": 59038
+    }
+  ]
+}
