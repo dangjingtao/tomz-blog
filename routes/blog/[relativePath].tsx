@@ -1,10 +1,11 @@
 import { Handlers } from "$fresh/server.ts";
 import { PageProps } from "$fresh/server.ts";
 import { getPost, Post } from "@/utils/posts.ts";
-import { CSS, render } from "$gfm";
-import { Head } from "$fresh/runtime.ts";
-import { useScript, useStyle } from "$fresh/runtime.ts";
-import Helmet from "preact-helmet";
+import MarkdownPage from "@/components/MarkdownPage/index.tsx";
+import { marked } from "@marked";
+// import { useCallback, useEffect } from "preact/hooks";
+import { render } from "$gfm";
+import MarkdownCate, { renderMarkdownTOC } from "@/islands/MarkdownCate.tsx";
 
 export const handler: Handlers<Post> = {
   async GET(_req, ctx) {
@@ -34,30 +35,43 @@ const BlogPostSummary = ({ title, publishedAt, modifiedDate, snippet }) => {
 
 export default function PostPage(props: PageProps<Post>) {
   const post = props.data;
+
+  // const getContent = useCallback((content) => {
+  //   marked.setOptions({
+  //     renderer: new marked.Renderer(),
+  //     gfm: true,
+  //   });
+
+  //   const htmlContent = marked.parse(content);
+  //   const headers: { level: number; text: string }[] = [];
+  //   marked.lexer(content).forEach((token) => {
+  //     if (token.type === "heading") {
+  //       headers.push({ level: token.depth, text: token.text });
+  //     }
+  //   });
+  //   const toc = renderMarkdownTOC(headers);
+  //   return { htmlContent, toc };
+  // }, []);
+
+  // const { htmlContent, toc } = getContent();
+
   return (
-    <div class="w-full md:w-[1440px] md:p-5 mx-auto">
-      <Head>
-        <style dangerouslySetInnerHTML={{ __html: CSS }} />
-      </Head>
-      <Helmet title="My Title" />
+    <div className="w-full md:w-[1640px] md:p-5 mx-auto">
       <div className="text-left flex flex-col md:flex-row gap-3">
         <div className="flex-1">
           <BlogPostSummary {...post} />
-          <div
-            className="markdown-body p-10 shadow-md"
-            dangerouslySetInnerHTML={{ __html: render(post.content) }}
-          />
+          <MarkdownPage content={render(post.content)} />
         </div>
-        <aside className="w-full md:w-[350px]  mt-5 md:mt-0 sticky top-0">
+        <aside className="w-full md:w-[400px] mt-5 md:mt-0 md:sticky top-[72px] self-start">
           {/* Sidebar content goes here */}
           <div className="p-4 border shadow-sm bg-white">
-            <h3 className="text-lg font-bold mb-2">Sidebar</h3>
-            <p className="text-gray-700">
-              Additional information or widgets can be placed here.
-            </p>
+            <h3 className="text-lg font-bold mb-2">TOC</h3>
+            <MarkdownCate content={post.content} />
           </div>
         </aside>
       </div>
+      <script>
+      </script>
     </div>
   );
 }

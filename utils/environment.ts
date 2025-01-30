@@ -10,10 +10,6 @@ export function getEnvVariable(key: string): string {
     return Cookie.get(key) || "";
   } else {
     const ENV = loadConfig();
-    console.log("====================================");
-    console.log(Deno.env);
-    console.log("====================================");
-    console.log("ENVVVVVVVVVVVVVVV", ENV);
-    return ENV[key] || "" || Deno.env.get(key);
+    return ENV[key] || Deno.env.get(key) || "";
   }
 }

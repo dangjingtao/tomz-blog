@@ -52,6 +52,7 @@ const PCNavItem = (
         <a
           onClick={onClick}
           href={href}
+          // f-partial={`/partials${href}`}
           target={href?.startsWith("http") ? "_blank" : "_self"}
           className={`block cursor-pointer h-full  ${
             level === 1

@@ -6,7 +6,6 @@ const Home = () => {
     <>
       <HomeBanner />
       <TechStack />
-
       <main class="flex-grow max-w-7xl mx-auto sm:px-3">
         <FeatureGrid />
       </main>

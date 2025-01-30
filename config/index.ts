@@ -2,6 +2,7 @@ import { getEnvVariable } from "@/utils/environment.ts";
 
 const CFG = {
   global: {
+    JSON_WEB_TOKEN_SECRET: getEnvVariable("JSON_WEB_TOKEN_SECRET"),
     siteName: "Tomz.io",
     siteDescription: "新时代中国特色经济危机下的个人开发者博客",
     siteKeywords:

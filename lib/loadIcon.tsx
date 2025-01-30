@@ -5,6 +5,15 @@ import CogOutlineIcon from "@mdi-preact/CogOutlineIcon.js";
 import LoginIcon from "@mdi-preact/LoginIcon.js";
 import LogoutIcon from "@mdi-preact/LogoutIcon.js";
 import AccountCircleOutlineIcon from "@mdi-preact/AccountCircleOutlineIcon.js";
+import ConsoleIcon from "@mdi-preact/ConsoleIcon.js";
+import ArchiveCogOutline from "@mdi-preact/ArchiveCogOutlineIcon.js";
+import AccountBoxEditOutline from "@mdi-preact/AccountBoxEditOutlineIcon.js";
+import PencilOutline from "@mdi-preact/PencilOutlineIcon.js";
+import MapMarkerMultipleOutline from "@mdi-preact/MapMarkerMultipleOutlineIcon.js";
+import iSitemapOutline from "@mdi-preact/SitemapOutlineIcon.js";
+import BriefcaseOutline from "@mdi-preact/BriefcaseOutlineIcon.js";
+import ArrowExpandLeft from "@mdi-preact/ArrowExpandLeftIcon.js";
+import ArrowExpandRight from "@mdi-preact/ArrowExpandRightIcon.js";
 
 const iconMap: { [key: string]: JSX.ElementType } = {
   TranslateIcon,
@@ -13,6 +22,15 @@ const iconMap: { [key: string]: JSX.ElementType } = {
   LogoutIcon,
   AccountCircleOutlineIcon,
   LoginIcon,
+  ConsoleIcon,
+  ArchiveCogOutline,
+  AccountBoxEditOutline,
+  PencilOutline,
+  MapMarkerMultipleOutline,
+  iSitemapOutline,
+  BriefcaseOutline,
+  ArrowExpandLeft,
+  ArrowExpandRight,
 };
 
 const loadIcon = (

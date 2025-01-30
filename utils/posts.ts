@@ -35,7 +35,6 @@ export async function getPost(
 ): Promise<Post | null> {
   const { fullPath, relativePath } = file;
   const filePath = fullPath || join("./posts", `${relativePath}.md`);
-  console.log("filePath", filePath);
   const text = await Deno.readTextFile(join(`${filePath}`));
   const { attrs, body } = extract(text);
   return {

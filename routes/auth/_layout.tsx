@@ -1,11 +1,11 @@
 import { PageProps } from "$fresh/server.ts";
-import Auth from "@/islands/Auth.tsx";
+import GithubLoginLayout from "@/islands/GithubLoginLayout.tsx";
 
 const AuthLayout = ({ Component, state }: PageProps) => {
   return (
-    <Auth>
+    <GithubLoginLayout>
       <Component />
-    </Auth>
+    </GithubLoginLayout>
   );
 };
 

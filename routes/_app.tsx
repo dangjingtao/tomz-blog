@@ -3,7 +3,6 @@ import { Head } from "$fresh/runtime.ts";
 import CFG from "@/config/index.ts";
 
 export default function App({ Component, state }: PageProps) {
-  console.log(state);
   return (
     <html>
       <Head>

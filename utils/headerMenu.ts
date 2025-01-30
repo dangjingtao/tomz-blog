@@ -24,6 +24,8 @@ const handleGithubLogin = () => {
 
 const handleSignOut = () => {
   clientCache.set("userInfo", "");
+  // 清理token
+  document.cookie = "token=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/;";
   globalThis.location.href = "/";
 };
 
@@ -38,9 +40,13 @@ export const getNavData = (): NavItem[] => {
   const userInfo = clientCache.get("userInfo");
 
   const authedDropDown = [{
-    name: T("Setting"),
+    name: T("Settings"),
     icon: "CogOutlineIcon",
-    href: "/setting/user",
+    href: "/settings/user-settings",
+  }, {
+    name: T("Console"),
+    icon: "ConsoleIcon",
+    href: "/console/user",
   }, {
     name: T("Sign out"),
     icon: "LogoutIcon",

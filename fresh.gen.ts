@@ -3,6 +3,7 @@
 // This file is automatically updated during development when running `dev.ts`.
 
 import * as $Home_index from "./routes/Home/index.tsx";
+import * as $_401 from "./routes/_401.tsx";
 import * as $_404 from "./routes/_404.tsx";
 import * as $_500 from "./routes/_500.tsx";
 import * as $_app from "./routes/_app.tsx";
@@ -18,20 +19,31 @@ import * as $blog_relativePath_ from "./routes/blog/[relativePath].tsx";
 import * as $blog_index from "./routes/blog/index.tsx";
 import * as $greet_name_ from "./routes/greet/[name].tsx";
 import * as $index from "./routes/index.tsx";
-import * as $setting_layout from "./routes/setting/_layout.tsx";
-import * as $setting_index from "./routes/setting/index.tsx";
-import * as $setting_user_index from "./routes/setting/user/index.tsx";
-import * as $Auth from "./islands/Auth.tsx";
+import * as $settings_layout from "./routes/settings/_layout.tsx";
+import * as $settings_middleware from "./routes/settings/_middleware.ts";
+import * as $settings_index from "./routes/settings/index.tsx";
+import * as $settings_model_settings_index from "./routes/settings/model-settings/index.tsx";
+import * as $settings_user_settings_index from "./routes/settings/user-settings/index.tsx";
+import * as $AuthLayout from "./islands/AuthLayout.tsx";
+import * as $Form_FormItem from "./islands/Form/FormItem.tsx";
+import * as $Form_Input from "./islands/Form/Input.tsx";
+import * as $Form_Select from "./islands/Form/Select.tsx";
+import * as $GithubLoginLayout from "./islands/GithubLoginLayout.tsx";
 import * as $HeaderNav from "./islands/HeaderNav.tsx";
 import * as $HeaderSearch from "./islands/HeaderSearch.tsx";
+import * as $MarkdownCate from "./islands/MarkdownCate.tsx";
 import * as $MarkdownPageRenderer from "./islands/MarkdownPageRenderer.tsx";
 import * as $Pagination from "./islands/Pagination.tsx";
+import * as $PanelSetting_index from "./islands/PanelSetting/index.tsx";
+import * as $ServiceProviders_SearchNav from "./islands/ServiceProviders/SearchNav.tsx";
+import * as $UserInfoCard from "./islands/UserInfoCard.tsx";
 import * as $sideNav from "./islands/sideNav.tsx";
 import type { Manifest } from "$fresh/server.ts";
 
 const manifest = {
   routes: {
     "./routes/Home/index.tsx": $Home_index,
+    "./routes/_401.tsx": $_401,
     "./routes/_404.tsx": $_404,
     "./routes/_500.tsx": $_500,
     "./routes/_app.tsx": $_app,
@@ -47,16 +59,27 @@ const manifest = {
     "./routes/blog/index.tsx": $blog_index,
     "./routes/greet/[name].tsx": $greet_name_,
     "./routes/index.tsx": $index,
-    "./routes/setting/_layout.tsx": $setting_layout,
-    "./routes/setting/index.tsx": $setting_index,
-    "./routes/setting/user/index.tsx": $setting_user_index,
+    "./routes/settings/_layout.tsx": $settings_layout,
+    "./routes/settings/_middleware.ts": $settings_middleware,
+    "./routes/settings/index.tsx": $settings_index,
+    "./routes/settings/model-settings/index.tsx":
+      $settings_model_settings_index,
+    "./routes/settings/user-settings/index.tsx": $settings_user_settings_index,
   },
   islands: {
-    "./islands/Auth.tsx": $Auth,
+    "./islands/AuthLayout.tsx": $AuthLayout,
+    "./islands/Form/FormItem.tsx": $Form_FormItem,
+    "./islands/Form/Input.tsx": $Form_Input,
+    "./islands/Form/Select.tsx": $Form_Select,
+    "./islands/GithubLoginLayout.tsx": $GithubLoginLayout,
     "./islands/HeaderNav.tsx": $HeaderNav,
     "./islands/HeaderSearch.tsx": $HeaderSearch,
+    "./islands/MarkdownCate.tsx": $MarkdownCate,
     "./islands/MarkdownPageRenderer.tsx": $MarkdownPageRenderer,
     "./islands/Pagination.tsx": $Pagination,
+    "./islands/PanelSetting/index.tsx": $PanelSetting_index,
+    "./islands/ServiceProviders/SearchNav.tsx": $ServiceProviders_SearchNav,
+    "./islands/UserInfoCard.tsx": $UserInfoCard,
     "./islands/sideNav.tsx": $sideNav,
   },
   baseUrl: import.meta.url,
