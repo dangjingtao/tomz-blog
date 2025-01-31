@@ -2,7 +2,7 @@ import { JSX } from "preact/jsx-runtime";
 import { FunctionalComponent } from "preact";
 import config from "@/config/index.ts";
 import clientCache from "@/lib/clientCache.ts";
-import AccountPanel from "@/components/Header/AccountPanel.tsx";
+import AccountPanel from "../islands/Header/AccountPanel.tsx";
 import T from "@/lib/Translate.ts";
 const { GITHUB_CLIENT_ID } = config.github;
 

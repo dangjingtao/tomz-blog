@@ -1,6 +1,5 @@
 const renderInput = (item) => {
   const { label, name, placeholder, value, onChange } = item;
-  console.log("renderInput", item);
   return (
     <div class="mb-2">
       <input

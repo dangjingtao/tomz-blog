@@ -7,8 +7,7 @@ const HomeBanner = () => {
       <div
         className="absolute inset-0 bg-cover bg-center"
         style={{
-          backgroundImage:
-            "url(https://sf-coze-web-cdn.coze.com/obj/coze-web-us/mf/marketplace/static/image/landing-banner-full.a83495ac.jpeg)",
+          backgroundImage: "url(/images/home/landing-banner.jpg)",
         }}
       >
       </div>

@@ -28,7 +28,7 @@ const Sidebar = ({ sidebarItems }: SidebarProps) => {
   return (
     <aside
       class={`relative py-4 text-gray-600 h-full shadow-lg transition-all duration-100 bg-white ${
-        isExpanded ? "w-[260px] px-4" : "w-[60px] px-1"
+        isExpanded ? "w-[260px] px-4" : "w-[60px] px-2"
       }`}
     >
       <button
@@ -44,13 +44,19 @@ const Sidebar = ({ sidebarItems }: SidebarProps) => {
           <li key={index}>
             <a
               href={item.link}
-              class={`flex ${
+              class={`relative flex ${
                 isExpanded ? "gap-1" : "justify-center"
-              } items p-2 rounded-lg hover:bg-gray-200 aria-[current]:bg-slate-200 leading-[20px]`}
+              } items p-2 rounded-lg hover:bg-gray-100 aria-[current]:bg-blue-100 leading-[20px]`}
             >
               {loadIcon(item.icon, { size: 20 })}
+              &nbsp;
               {isExpanded && (
                 <span class="text-[14px] leading-6">{item.label}</span>
+              )}
+              {!isExpanded && (
+                <span class="tooltip text-[14px] absolute min-w-36 -top-[1px] left-full ml-2 p-2.5 bg-geekblue-7 text-white text-xs rounded opacity-0 transition-opacity duration-300">
+                  {item.label}
+                </span>
               )}
             </a>
           </li>

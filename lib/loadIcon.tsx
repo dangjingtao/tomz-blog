@@ -14,6 +14,8 @@ import iSitemapOutline from "@mdi-preact/SitemapOutlineIcon.js";
 import BriefcaseOutline from "@mdi-preact/BriefcaseOutlineIcon.js";
 import ArrowExpandLeft from "@mdi-preact/ArrowExpandLeftIcon.js";
 import ArrowExpandRight from "@mdi-preact/ArrowExpandRightIcon.js";
+import Menu from "@mdi-preact/MenuIcon.js";
+import WindowClose from "@mdi-preact/WindowCloseIcon.js";
 
 const iconMap: { [key: string]: JSX.ElementType } = {
   TranslateIcon,
@@ -31,6 +33,8 @@ const iconMap: { [key: string]: JSX.ElementType } = {
   BriefcaseOutline,
   ArrowExpandLeft,
   ArrowExpandRight,
+  Menu,
+  WindowClose,
 };
 
 const loadIcon = (

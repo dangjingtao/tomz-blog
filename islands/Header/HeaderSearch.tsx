@@ -1,5 +1,6 @@
 import { useEffect, useRef, useState } from "preact/hooks";
 import MagnifyIcon from "@mdi-preact/MagnifyIcon.js";
+import useScroll from "@/hooks/useScroll.ts";
 
 const HeaderSeach = () => {
   const [placeholder, setPlaceholder] = useState("Search...");

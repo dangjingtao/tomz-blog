@@ -3,7 +3,6 @@
 // This file is automatically updated during development when running `dev.ts`.
 
 import * as $Home_index from "./routes/Home/index.tsx";
-import * as $_401 from "./routes/_401.tsx";
 import * as $_404 from "./routes/_404.tsx";
 import * as $_500 from "./routes/_500.tsx";
 import * as $_app from "./routes/_app.tsx";
@@ -13,10 +12,10 @@ import * as $about_index from "./routes/about/index.tsx";
 import * as $api_index from "./routes/api/index.ts";
 import * as $api_user_auth from "./routes/api/user/auth.ts";
 import * as $api_user_index from "./routes/api/user/index.ts";
-import * as $auth_layout from "./routes/auth/_layout.tsx";
 import * as $auth_index from "./routes/auth/index.tsx";
 import * as $blog_relativePath_ from "./routes/blog/[relativePath].tsx";
 import * as $blog_index from "./routes/blog/index.tsx";
+import * as $error_index from "./routes/error/index.tsx";
 import * as $greet_name_ from "./routes/greet/[name].tsx";
 import * as $index from "./routes/index.tsx";
 import * as $settings_layout from "./routes/settings/_layout.tsx";
@@ -25,17 +24,25 @@ import * as $settings_index from "./routes/settings/index.tsx";
 import * as $settings_model_settings_index from "./routes/settings/model-settings/index.tsx";
 import * as $settings_user_settings_index from "./routes/settings/user-settings/index.tsx";
 import * as $AuthLayout from "./islands/AuthLayout.tsx";
+import * as $Banner_TimeLine from "./islands/Banner/TimeLine.tsx";
+import * as $Banner_index from "./islands/Banner/index.tsx";
+import * as $Footer_index from "./islands/Footer/index.tsx";
 import * as $Form_FormItem from "./islands/Form/FormItem.tsx";
 import * as $Form_Input from "./islands/Form/Input.tsx";
 import * as $Form_Select from "./islands/Form/Select.tsx";
+import * as $GitHubLogin_index from "./islands/GitHubLogin/index.tsx";
 import * as $GithubLoginLayout from "./islands/GithubLoginLayout.tsx";
-import * as $HeaderNav from "./islands/HeaderNav.tsx";
-import * as $HeaderSearch from "./islands/HeaderSearch.tsx";
+import * as $Header_AccountPanel from "./islands/Header/AccountPanel.tsx";
+import * as $Header_HeaderNav from "./islands/Header/HeaderNav.tsx";
+import * as $Header_HeaderSearch from "./islands/Header/HeaderSearch.tsx";
+import * as $Header_Language from "./islands/Header/Language.tsx";
+import * as $Header_index from "./islands/Header/index.tsx";
 import * as $MarkdownCate from "./islands/MarkdownCate.tsx";
 import * as $MarkdownPageRenderer from "./islands/MarkdownPageRenderer.tsx";
 import * as $Pagination from "./islands/Pagination.tsx";
 import * as $PanelSetting_index from "./islands/PanelSetting/index.tsx";
 import * as $ServiceProviders_SearchNav from "./islands/ServiceProviders/SearchNav.tsx";
+import * as $ServiceProviders_index from "./islands/ServiceProviders/index.tsx";
 import * as $UserInfoCard from "./islands/UserInfoCard.tsx";
 import * as $sideNav from "./islands/sideNav.tsx";
 import type { Manifest } from "$fresh/server.ts";
@@ -43,7 +50,6 @@ import type { Manifest } from "$fresh/server.ts";
 const manifest = {
   routes: {
     "./routes/Home/index.tsx": $Home_index,
-    "./routes/_401.tsx": $_401,
     "./routes/_404.tsx": $_404,
     "./routes/_500.tsx": $_500,
     "./routes/_app.tsx": $_app,
@@ -53,10 +59,10 @@ const manifest = {
     "./routes/api/index.ts": $api_index,
     "./routes/api/user/auth.ts": $api_user_auth,
     "./routes/api/user/index.ts": $api_user_index,
-    "./routes/auth/_layout.tsx": $auth_layout,
     "./routes/auth/index.tsx": $auth_index,
     "./routes/blog/[relativePath].tsx": $blog_relativePath_,
     "./routes/blog/index.tsx": $blog_index,
+    "./routes/error/index.tsx": $error_index,
     "./routes/greet/[name].tsx": $greet_name_,
     "./routes/index.tsx": $index,
     "./routes/settings/_layout.tsx": $settings_layout,
@@ -68,17 +74,25 @@ const manifest = {
   },
   islands: {
     "./islands/AuthLayout.tsx": $AuthLayout,
+    "./islands/Banner/TimeLine.tsx": $Banner_TimeLine,
+    "./islands/Banner/index.tsx": $Banner_index,
+    "./islands/Footer/index.tsx": $Footer_index,
     "./islands/Form/FormItem.tsx": $Form_FormItem,
     "./islands/Form/Input.tsx": $Form_Input,
     "./islands/Form/Select.tsx": $Form_Select,
+    "./islands/GitHubLogin/index.tsx": $GitHubLogin_index,
     "./islands/GithubLoginLayout.tsx": $GithubLoginLayout,
-    "./islands/HeaderNav.tsx": $HeaderNav,
-    "./islands/HeaderSearch.tsx": $HeaderSearch,
+    "./islands/Header/AccountPanel.tsx": $Header_AccountPanel,
+    "./islands/Header/HeaderNav.tsx": $Header_HeaderNav,
+    "./islands/Header/HeaderSearch.tsx": $Header_HeaderSearch,
+    "./islands/Header/Language.tsx": $Header_Language,
+    "./islands/Header/index.tsx": $Header_index,
     "./islands/MarkdownCate.tsx": $MarkdownCate,
     "./islands/MarkdownPageRenderer.tsx": $MarkdownPageRenderer,
     "./islands/Pagination.tsx": $Pagination,
     "./islands/PanelSetting/index.tsx": $PanelSetting_index,
     "./islands/ServiceProviders/SearchNav.tsx": $ServiceProviders_SearchNav,
+    "./islands/ServiceProviders/index.tsx": $ServiceProviders_index,
     "./islands/UserInfoCard.tsx": $UserInfoCard,
     "./islands/sideNav.tsx": $sideNav,
   },

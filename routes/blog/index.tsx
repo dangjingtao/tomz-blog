@@ -78,7 +78,6 @@ export default function BlogIndexPage(props: PageProps<Post[]>) {
         class="bg-slate-300 md:h-36 bg-url"
         style={{
           backgroundImage: "url(/images/blog.jpg)",
-          // "url(https://sf-coze-web-cdn.coze.com/obj/coze-web-us/mf/marketplace/static/image/landing-banner-full.a83495ac.jpeg)",
           backgroundSize: "cover",
           backgroundPosition: "center",
           transform: "scaleX(-1)",

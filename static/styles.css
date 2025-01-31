@@ -264,7 +264,18 @@
 .bg-geekblue-2 {
   background-color: var(--geekblue-2);
 }
+.bg-geekblue-5 {
+  background-color: var(--geekblue-5);
+}
+
+.bg-geekblue-6 {
+  background-color: var(--geekblue-6);
+}
+
 .bg-geekblue-7 {
+  background-color: var(--geekblue-7);
+}
+.hover:bg-geekblue-7 {
   background-color: var(--geekblue-7);
 }
 .bg-geekblue-9 {
@@ -277,70 +288,21 @@
   color: var(--geekblue-9);
 }
 
+.tooltip::before {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: -10px; /* 调整位置 */
+  transform: translateY(-50%);
+  border-width: 5px;
+  border-style: solid;
+  border-color: transparent var(--geekblue-7) transparent transparent;
+}
+a:hover .tooltip {
+  opacity: 0.8;
+}
+
 .text-title-2 {
-  --body-color: #6a7280;
-  --black: #10154e;
-  --black-dark: #010318;
-  --primary: #4a6cf7;
-  --primary-dark: #1741e8;
-  --white: #fff;
-  --bs-blue: #0d6efd;
-  --bs-indigo: #6610f2;
-  --bs-purple: #6f42c1;
-  --bs-pink: #d63384;
-  --bs-red: #dc3545;
-  --bs-orange: #fd7e14;
-  --bs-yellow: #ffc107;
-  --bs-green: #198754;
-  --bs-teal: #20c997;
-  --bs-cyan: #0dcaf0;
-  --bs-white: #fff;
-  --bs-gray: #6c757d;
-  --bs-gray-dark: #343a40;
-  --bs-gray-100: #f8f9fa;
-  --bs-gray-200: #e9ecef;
-  --bs-gray-300: #dee2e6;
-  --bs-gray-400: #ced4da;
-  --bs-gray-500: #adb5bd;
-  --bs-gray-600: #6c757d;
-  --bs-gray-700: #495057;
-  --bs-gray-800: #343a40;
-  --bs-gray-900: #212529;
-  --bs-primary: #0d6efd;
-  --bs-secondary: #6c757d;
-  --bs-success: #198754;
-  --bs-info: #0dcaf0;
-  --bs-warning: #ffc107;
-  --bs-danger: #dc3545;
-  --bs-light: #f8f9fa;
-  --bs-dark: #212529;
-  --bs-primary-rgb: 13,110,253;
-  --bs-secondary-rgb: 108,117,125;
-  --bs-success-rgb: 25,135,84;
-  --bs-info-rgb: 13,202,240;
-  --bs-warning-rgb: 255,193,7;
-  --bs-danger-rgb: 220,53,69;
-  --bs-light-rgb: 248,249,250;
-  --bs-dark-rgb: 33,37,41;
-  --bs-white-rgb: 255,255,255;
-  --bs-black-rgb: 0,0,0;
-  --bs-body-color-rgb: 33,37,41;
-  --bs-body-bg-rgb: 255,255,255;
-  --bs-font-sans-serif:
-    system-ui,-apple-system,"Segoe UI",Roboto,"Helvetica Neue",Arial,"Noto Sans","Liberation Sans",sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol","Noto Color Emoji";
-  --bs-font-monospace:
-    SFMono-Regular,Menlo,Monaco,Consolas,"Liberation Mono","Courier New",monospace;
-  --bs-gradient: linear-gradient(
-    180deg,
-    hsla(0, 0%, 100%, 0.15),
-    hsla(0, 0%, 100%, 0)
-  );
-  --bs-body-font-family: var(--bs-font-sans-serif);
-  --bs-body-font-size: 1rem;
-  --bs-body-font-weight: 400;
-  --bs-body-line-height: 1.5;
-  --bs-body-color: #212529;
-  --bs-body-bg: #fff;
   color-scheme: light;
   box-sizing: border-box;
   font-family: Sora, sans-serif !important;
@@ -382,6 +344,24 @@
   font-size: 16px;
   line-height: 25px;
   color: #6a7280;
+}
+
+*::-webkit-scrollbar {
+  /*滚动条整体样式*/
+  width: 6px; /*高宽分别对应横竖滚动条的尺寸*/
+  height: 1px;
+}
+*::-webkit-scrollbar-thumb {
+  /*滚动条里面深色条*/
+  border-radius: 10px;
+  box-shadow: inset 0 0 5px rgba(236, 236, 236, 0.1);
+  background: #ccc;
+}
+*::-webkit-scrollbar-track {
+  /*滚动条里面轨道*/
+  box-shadow: inset 0 0 5px rgba(236, 236, 236, 0.1);
+  border-radius: 10px;
+  background: #ededed;
 }
 
 /* .icon {

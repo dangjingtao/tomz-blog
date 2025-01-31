@@ -1,4 +1,4 @@
-import HomeBanner from "@/components/Banner/index.tsx";
+import HomeBanner from "@/islands/Banner/index.tsx";
 import TechStack from "@/components/TechStack/index.tsx";
 import FeatureGrid from "@/components/FeatureGrid/index.tsx";
 const Home = () => {

@@ -1,4 +1,3 @@
-import TimeLine from "@/components/Banner/TimeLine.tsx";
 import CFG from "@/config/index.ts";
 import MetaHead from "@/components/MetaHead/index.tsx";
 

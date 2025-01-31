@@ -1,8 +1,6 @@
 import { useSignal } from "@preact/signals";
-import MenuIcon from "@mdi-preact/MenuIcon.js";
-import WindowCloseIcon from "@mdi-preact/WindowCloseIcon.js";
 import { useCallback } from "preact/hooks";
-import { getNavData, NavItem } from "../utils/headerMenu.ts";
+import { getNavData, NavItem } from "../../utils/headerMenu.ts";
 import loadIcon from "@/lib/loadIcon.tsx";
 
 interface ExtendedNavItem extends NavItem {
@@ -52,14 +50,13 @@ const PCNavItem = (
         <a
           onClick={onClick}
           href={href}
-          // f-partial={`/partials${href}`}
           target={href?.startsWith("http") ? "_blank" : "_self"}
           className={`block cursor-pointer h-full  ${
             level === 1
-              ? `text-white aria-[current]:bg-white/30 px-4 ${
+              ? `${href ? "aria-[current]:bg-blue-300/50" : ""} px-4 ${
                 dropDownOpen.value ? "bg-white/10" : ""
               }`
-              : `hover:bg-gray-300/30 p-4 pt-2 pb-2 text-gray-700`
+              : `hover:bg-blue-300/30 p-4 pt-2 pb-2 text-gray-700`
           } no-underline flex items-center`}
         >
           <div class="flex gap-2 text-sm">
@@ -116,13 +113,13 @@ const HeaderNav = () => {
         </ul>
       </nav>
       <button
-        class="bg-transparent border-none text-white text-lg md:hidden"
+        class="bg-transparent border-none text-lg md:hidden"
         onClick={toggleMenu}
         aria-label="Toggle menu"
       >
         {menuOpen.value
-          ? <WindowCloseIcon size={30} />
-          : <MenuIcon size={30} />}
+          ? loadIcon("WindowClose", { size: 30 })
+          : loadIcon("Menu", { size: 30 })}
       </button>
       <div
         class={`absolute top-full bg-slate-50 left-0 w-full z-10 bg-geekblue-100 p-4 transition-opacity duration-200 ease-in-out md:hidden shadow-lg ${
@@ -130,7 +127,8 @@ const HeaderNav = () => {
         }`}
       >
         <ul class="list-none p-0 m-0 flex flex-col gap-4">
-          {navData.map(({ name, href }) => (
+          {
+            /* {navData.map(({ name, href }) => (
             <li key={name}>
               <a
                 href={href}
@@ -141,7 +139,8 @@ const HeaderNav = () => {
                 {name}
               </a>
             </li>
-          ))}
+          ))} */
+          }
         </ul>
       </div>
     </>

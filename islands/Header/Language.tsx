@@ -1,5 +1,3 @@
-import { State } from "@/routes/_middleware.ts";
-
 export default function Language({ lang }: { lang: State["lang"] }) {
   return (
     <button
