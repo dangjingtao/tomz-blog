@@ -122,7 +122,7 @@ const HeaderNav = () => {
           : loadIcon("Menu", { size: 30 })}
       </button>
       <div
-        class={`absolute top-full bg-slate-50 left-0 w-full z-10 bg-geekblue-100 p-4 transition-opacity duration-200 ease-in-out md:hidden shadow-lg ${
+        class={`absolute top-full bg-slate-50 left-0 w-full z-10 p-4 transition-opacity duration-200 ease-in-out md:hidden shadow-lg ${
           menuOpen.value ? "opacity-100" : "opacity-0"
         }`}
       >

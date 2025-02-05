@@ -27,6 +27,14 @@
     "$gfm": "jsr:@deno/gfm@^0.10.0",
     "@gz/jwt": "jsr:@gz/jwt@^0.1.0",
     "@mdi-preact": "npm:mdi-preact",
+    "@preact/compat": "npm:@preact/compat@^18.3.1",
+    "@emotion/react": "https://esm.sh/@emotion/react@^11.13.3?alias=react:preact/compat,react/:preact/compat/,react-dom:preact/compat,react-dom/:preact/compat/,react/jsx-runtime:preact/compat/jsx-runtime,@types/react:preact/compat&external=preact&deps=preact@10.23.1",
+    "@emotion/styled": "https://esm.sh/@emotion/styled@^11.13.0?alias=react:preact/compat,react/:preact/compat/,react-dom:preact/compat,react-dom/:preact/compat/,react/jsx-runtime:preact/compat/jsx-runtime,@types/react:preact/compat&external=preact&deps=preact@10.23.1",
+    "@mui/material": "https://esm.sh/@mui/material@^6.1.7?alias=react:preact/compat,react/:preact/compat/,react-dom:preact/compat,react-dom/:preact/compat/,react/jsx-runtime:preact/compat/jsx-runtime,@types/react:preact/compat&external=preact&deps=preact@10.23.1",
+    "@mui/styled-engine-sc": "https://esm.sh/@mui/styled-engine-sc@^6.1.7?alias=react:preact/compat,react/:preact/compat/,react-dom:preact/compat,react-dom/:preact/compat/,react/jsx-runtime:preact/compat/jsx-runtime,@types/react:preact/compat&external=preact&deps=preact@10.23.1",
+    "@tailwindcss/custom-forms": "npm:@tailwindcss/custom-forms@^0.2.1",
+    "preact-render-to-string": "npm:preact-render-to-string@^6.5.13",
+    "styled-components": "https://esm.sh/styled-components@^6.1.13?alias=react:preact/compat,react/:preact/compat/,react-dom:preact/compat,react-dom/:preact/compat/,react/jsx-runtime:preact/compat/jsx-runtime,@types/react:preact/compat&external=preact&deps=preact@10.23.1",
     "@std/encoding": "jsr:@std/encoding@^1.0.6",
     "@sys/fs": "jsr:@sys/fs@^0.0.42",
     "@marked": "npm:marked@^15.0.6",
@@ -40,7 +48,8 @@
     "$std/": "https://deno.land/std@0.216.0/",
     "$helmet": "https://esm.sh/preact-helmet@4.0.0-alpha-3",
     "@/": "./",
-    "@uuid": "npm:uuid@^11.0.5"
+    "@uuid": "npm:uuid@^11.0.5",
+    "@zero-md": "npm:zero-md@^3.1.7"
   },
   "compilerOptions": {
     "jsx": "react-jsx",

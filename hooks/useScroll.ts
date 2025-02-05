@@ -5,9 +5,6 @@ const useScroll = () => {
 
   useEffect(() => {
     const handleScroll = () => {
-      // console.log("scrolling", globalThis.scrollY > 0);
-      console.log("scrolling", globalThis.scrollY);
-
       setIsScrolled(globalThis.scrollY > 0);
     };
     globalThis.addEventListener("scroll", handleScroll);

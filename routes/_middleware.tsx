@@ -1,6 +1,7 @@
 import { FreshContext } from "$fresh/server.ts";
 import config from "@/config/index.ts";
 import { setCookie } from "$cookie";
+
 const { GITHUB_CLIENT_ID } = config.github;
 
 export async function handler(
@@ -14,5 +15,6 @@ export async function handler(
     path: "/",
     maxAge: 60 * 60 * 24,
   });
+
   return resp;
 }

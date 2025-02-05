@@ -41,7 +41,7 @@ export const renderList = (items) => {
               e.preventDefault();
               handleClick(item.text.replace(/\s+/g, "-").toLowerCase());
             }}
-            className="text-geek-blue-3"
+            className="text-geekblue-3"
           >
             {item.text}
           </a>

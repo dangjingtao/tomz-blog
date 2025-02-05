@@ -8,5 +8,11 @@
   "Sign out": "登出",
   "Sign with Github": "使用 Github 登录",
   "Console": "控制台",
-  "Settings": "设置"
+  "Settings": "设置",
+  "Cancel": "取消",
+  "Confirm": "确认",
+  "Save": "保存",
+  "Edit": "编辑",
+  "Delete": "删除",
+  "Create": "创建"
 }

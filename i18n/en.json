@@ -8,5 +8,11 @@
   "Sign out": "Sign out",
   "Sign with Github": "Sign with Github",
   "Console": "Console",
-  "Settings": "Settings"
+  "Settings": "Settings",
+  "Cancel": "Cancel",
+  "Confirm": "Confirm",
+  "Save": "Save",
+  "Edit": "Edit",
+  "Delete": "Delete",
+  "Create": "Create"
 }

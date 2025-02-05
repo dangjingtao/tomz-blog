@@ -20,6 +20,12 @@ const SettingLayout = ({ Component, state }: PageProps) => {
       label: T("Model Provider"),
       link: `/${currentFolderName}/model-settings`,
     },
+    {
+      icon: "ArchiveCogOutline",
+      alt: "blogSettings",
+      label: T("Blog Settings"),
+      link: `/${currentFolderName}/blog-settings`,
+    },
   ];
   return ((
     <div class="flex h-[calc(100vh-52px)] bg-gray-100 text-sm" f-client-nav>

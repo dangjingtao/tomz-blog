@@ -4,6 +4,7 @@ import config from "@/config/index.ts";
 import clientCache from "@/lib/clientCache.ts";
 import AccountPanel from "../islands/Header/AccountPanel.tsx";
 import T from "@/lib/Translate.ts";
+import Cookie from "@/lib/cookie.ts";
 const { GITHUB_CLIENT_ID } = config.github;
 
 export interface NavItem {
@@ -33,6 +34,7 @@ const handleToggleLang = () => {
   const lang = clientCache.get("lang");
   const newLang = lang === "en" ? "cn" : "en";
   clientCache.set("lang", newLang);
+  Cookie.set("lang", newLang);
   location.reload();
 };
 
@@ -64,10 +66,6 @@ export const getNavData = (): NavItem[] => {
     {
       name: T("Docs"),
       href: "/docs",
-      children: [
-        { name: "API", href: "#api" },
-        { name: "Guides", href: "#guides" },
-      ],
     },
     { name: T("Blog"), href: "/blog" },
     { name: T("About"), href: "/about" },

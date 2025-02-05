@@ -18,7 +18,7 @@ const getStatus = (
 
 interface State {
   status?: "401" | "404" | "500" | "403" | "loading";
-  url: {
+  url?: {
     search: string;
   };
   title?: string;
@@ -26,7 +26,10 @@ interface State {
 }
 
 export default function (state: State) {
-  const status = getStatus(state);
+  const status = getStatus({
+    ...state,
+    url: state.url || { search: "" },
+  });
   const contentMap = {
     401: {
       title: "401 - Unauthorized",
@@ -60,7 +63,7 @@ export default function (state: State) {
       </Head>
       <div
         style={{ height: "calc(100vh - 304px)" }}
-        class="flex  flex-col justify-center items-center bg-geekblue-1 text-center"
+        class="flex  flex-col justify-center items-center bg-primary-1 text-center"
       >
         <div
           class="w-[430px] h-[430px] mt-[-200px] bg-center bg-no-repeat bg-contain"
@@ -78,7 +81,7 @@ export default function (state: State) {
         {status !== "loading" && (
           <a
             href="/"
-            class="px-4 py-2 bg-geekblue-6 rounded-md text-md text-white transition-transform transform hover:scale-105 active:scale-95"
+            class="px-4 py-2 bg-primary-6 rounded-md text-md text-white transition-transform transform hover:scale-105 active:scale-95"
           >
             Go back home
           </a>

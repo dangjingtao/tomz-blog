@@ -54,7 +54,7 @@ const Sidebar = ({ sidebarItems }: SidebarProps) => {
                 <span class="text-[14px] leading-6">{item.label}</span>
               )}
               {!isExpanded && (
-                <span class="tooltip text-[14px] absolute min-w-36 -top-[1px] left-full ml-2 p-2.5 bg-geekblue-7 text-white text-xs rounded opacity-0 transition-opacity duration-300">
+                <span class="tooltip text-[14px] absolute min-w-36 -top-[1px] left-full ml-2 p-2.5 bg-primary-7 text-white text-xs rounded opacity-0 transition-opacity duration-300">
                   {item.label}
                 </span>
               )}

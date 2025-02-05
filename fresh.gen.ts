@@ -7,7 +7,7 @@ import * as $_404 from "./routes/_404.tsx";
 import * as $_500 from "./routes/_500.tsx";
 import * as $_app from "./routes/_app.tsx";
 import * as $_layout from "./routes/_layout.tsx";
-import * as $_middleware from "./routes/_middleware.ts";
+import * as $_middleware from "./routes/_middleware.tsx";
 import * as $about_index from "./routes/about/index.tsx";
 import * as $api_index from "./routes/api/index.ts";
 import * as $api_user_auth from "./routes/api/user/auth.ts";
@@ -15,8 +15,10 @@ import * as $api_user_index from "./routes/api/user/index.ts";
 import * as $auth_index from "./routes/auth/index.tsx";
 import * as $blog_relativePath_ from "./routes/blog/[relativePath].tsx";
 import * as $blog_index from "./routes/blog/index.tsx";
+import * as $docs_path_ from "./routes/docs/[...path].tsx";
+import * as $docs_middleware from "./routes/docs/_middleware.ts";
+import * as $docs_index from "./routes/docs/index.tsx";
 import * as $error_index from "./routes/error/index.tsx";
-import * as $greet_name_ from "./routes/greet/[name].tsx";
 import * as $index from "./routes/index.tsx";
 import * as $settings_layout from "./routes/settings/_layout.tsx";
 import * as $settings_middleware from "./routes/settings/_middleware.ts";
@@ -26,6 +28,8 @@ import * as $settings_user_settings_index from "./routes/settings/user-settings/
 import * as $AuthLayout from "./islands/AuthLayout.tsx";
 import * as $Banner_TimeLine from "./islands/Banner/TimeLine.tsx";
 import * as $Banner_index from "./islands/Banner/index.tsx";
+import * as $Button_index from "./islands/Button/index.tsx";
+import * as $Dialog_index from "./islands/Dialog/index.tsx";
 import * as $Footer_index from "./islands/Footer/index.tsx";
 import * as $Form_FormItem from "./islands/Form/FormItem.tsx";
 import * as $Form_Input from "./islands/Form/Input.tsx";
@@ -39,8 +43,14 @@ import * as $Header_Language from "./islands/Header/Language.tsx";
 import * as $Header_index from "./islands/Header/index.tsx";
 import * as $MarkdownCate from "./islands/MarkdownCate.tsx";
 import * as $MarkdownPageRenderer from "./islands/MarkdownPageRenderer.tsx";
+import * as $MarkdownRenderer_Aside from "./islands/MarkdownRenderer/Aside.tsx";
+import * as $MarkdownRenderer_Doc from "./islands/MarkdownRenderer/Doc.tsx";
+import * as $MarkdownRenderer_Main from "./islands/MarkdownRenderer/Main.tsx";
 import * as $Pagination from "./islands/Pagination.tsx";
+import * as $PanelSetting_Panel from "./islands/PanelSetting/Panel.tsx";
 import * as $PanelSetting_index from "./islands/PanelSetting/index.tsx";
+import * as $ServiceProviders_ModelCard from "./islands/ServiceProviders/ModelCard.tsx";
+import * as $ServiceProviders_ProviderSetting from "./islands/ServiceProviders/ProviderSetting.tsx";
 import * as $ServiceProviders_SearchNav from "./islands/ServiceProviders/SearchNav.tsx";
 import * as $ServiceProviders_index from "./islands/ServiceProviders/index.tsx";
 import * as $UserInfoCard from "./islands/UserInfoCard.tsx";
@@ -54,7 +64,7 @@ const manifest = {
     "./routes/_500.tsx": $_500,
     "./routes/_app.tsx": $_app,
     "./routes/_layout.tsx": $_layout,
-    "./routes/_middleware.ts": $_middleware,
+    "./routes/_middleware.tsx": $_middleware,
     "./routes/about/index.tsx": $about_index,
     "./routes/api/index.ts": $api_index,
     "./routes/api/user/auth.ts": $api_user_auth,
@@ -62,8 +72,10 @@ const manifest = {
     "./routes/auth/index.tsx": $auth_index,
     "./routes/blog/[relativePath].tsx": $blog_relativePath_,
     "./routes/blog/index.tsx": $blog_index,
+    "./routes/docs/[...path].tsx": $docs_path_,
+    "./routes/docs/_middleware.ts": $docs_middleware,
+    "./routes/docs/index.tsx": $docs_index,
     "./routes/error/index.tsx": $error_index,
-    "./routes/greet/[name].tsx": $greet_name_,
     "./routes/index.tsx": $index,
     "./routes/settings/_layout.tsx": $settings_layout,
     "./routes/settings/_middleware.ts": $settings_middleware,
@@ -76,6 +88,8 @@ const manifest = {
     "./islands/AuthLayout.tsx": $AuthLayout,
     "./islands/Banner/TimeLine.tsx": $Banner_TimeLine,
     "./islands/Banner/index.tsx": $Banner_index,
+    "./islands/Button/index.tsx": $Button_index,
+    "./islands/Dialog/index.tsx": $Dialog_index,
     "./islands/Footer/index.tsx": $Footer_index,
     "./islands/Form/FormItem.tsx": $Form_FormItem,
     "./islands/Form/Input.tsx": $Form_Input,
@@ -89,8 +103,15 @@ const manifest = {
     "./islands/Header/index.tsx": $Header_index,
     "./islands/MarkdownCate.tsx": $MarkdownCate,
     "./islands/MarkdownPageRenderer.tsx": $MarkdownPageRenderer,
+    "./islands/MarkdownRenderer/Aside.tsx": $MarkdownRenderer_Aside,
+    "./islands/MarkdownRenderer/Doc.tsx": $MarkdownRenderer_Doc,
+    "./islands/MarkdownRenderer/Main.tsx": $MarkdownRenderer_Main,
     "./islands/Pagination.tsx": $Pagination,
+    "./islands/PanelSetting/Panel.tsx": $PanelSetting_Panel,
     "./islands/PanelSetting/index.tsx": $PanelSetting_index,
+    "./islands/ServiceProviders/ModelCard.tsx": $ServiceProviders_ModelCard,
+    "./islands/ServiceProviders/ProviderSetting.tsx":
+      $ServiceProviders_ProviderSetting,
     "./islands/ServiceProviders/SearchNav.tsx": $ServiceProviders_SearchNav,
     "./islands/ServiceProviders/index.tsx": $ServiceProviders_index,
     "./islands/UserInfoCard.tsx": $UserInfoCard,

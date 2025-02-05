@@ -1,5 +1,6 @@
 import { useState } from "preact/hooks";
 import FormItem from "@/islands/Form/FormItem.tsx";
+import Panel from "@/islands/PanelSetting/Panel.tsx";
 
 interface PanelSettingProps {
   title: string;
@@ -37,38 +38,46 @@ const PanelSetting = ({ title, items }: PanelSettingProps) => {
     setIsDirty(false);
   };
 
+  const slot = isDirty
+    ? (
+      <div class="flex justify-end gap-2">
+        <button
+          onClick={handleReset}
+          class=" text-red-500 text-[14px]   rounded  transition-colors duration-300 hover:bg-gray-200"
+        >
+          放弃
+        </button>
+        <button
+          onClick={handleSubmit}
+          class=" text-blue-500 text-[14px]  rounded  transition-colors duration-300 hover:bg-gray-200"
+        >
+          保存
+        </button>
+      </div>
+    )
+    : null;
+
   return (
-    <div class="rounded-lg bg-gray-50 ">
-      <h3 class="text-[16px] font-medium bg-gray-100 px-4 py-2 rounded-t-lg">
-        {title}
-      </h3>
-      <div class="p-4 space-y-3">
-        {items.map((item, index) => (
+    <Panel title={title} slot={slot}>
+      {items.length === 0 && (
+        <p class="text-center text-gray-500">
+          暂无设置项
+        </p>
+      )}
+      {items.map((item, index) => {
+        if (item.content) {
+          return item.content;
+        }
+        return (
           <FormItem
             key={item.name}
             {...item}
             value={formData[item.name]}
             handleChange={handleChange}
           />
-        ))}
-        {isDirty && (
-          <div class="mt-2 flex justify-end">
-            <button
-              onClick={handleReset}
-              class=" text-red-500 p-2  rounded  transition-colors duration-300 hover:bg-gray-200"
-            >
-              放弃
-            </button>
-            <button
-              onClick={handleSubmit}
-              class=" text-blue-500 p-2  rounded  transition-colors duration-300 hover:bg-gray-200"
-            >
-              保存
-            </button>
-          </div>
-        )}
-      </div>
-    </div>
+        );
+      })}
+    </Panel>
   );
 };
 

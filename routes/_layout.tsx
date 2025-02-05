@@ -8,7 +8,7 @@ const RootLayout = ({ Component, state }: PageProps) => {
     <div className="min-h-screen flex flex-col" f-client-nav>
       <Header />
       <Partial name="body">
-        <div className="flex-grow bg-geekblue-1">
+        <div className="flex-grow bg-primary-1">
           <Component />
         </div>
         {!state.hidefooter && <Footer />}

@@ -16,6 +16,15 @@ import ArrowExpandLeft from "@mdi-preact/ArrowExpandLeftIcon.js";
 import ArrowExpandRight from "@mdi-preact/ArrowExpandRightIcon.js";
 import Menu from "@mdi-preact/MenuIcon.js";
 import WindowClose from "@mdi-preact/WindowCloseIcon.js";
+import ChevronLeft from "@mdi-preact/ChevronLeftIcon.js";
+import ChevronRight from "@mdi-preact/ChevronRightIcon.js";
+import ChevronDown from "@mdi-preact/ChevronDownIcon.js";
+import ChevronUp from "@mdi-preact/ChevronUpIcon.js";
+import Close from "@mdi-preact/CloseIcon.js";
+import MenuDown from "@mdi-preact/MenuDownIcon.js";
+import MenuUp from "@mdi-preact/MenuUpIcon.js";
+import MenuLeft from "@mdi-preact/MenuLeftIcon.js";
+import MenuRight from "@mdi-preact/MenuRightIcon.js";
 
 const iconMap: { [key: string]: JSX.ElementType } = {
   TranslateIcon,
@@ -35,6 +44,15 @@ const iconMap: { [key: string]: JSX.ElementType } = {
   ArrowExpandRight,
   Menu,
   WindowClose,
+  ChevronLeft,
+  ChevronRight,
+  ChevronDown,
+  ChevronUp,
+  Close,
+  MenuDown,
+  MenuUp,
+  MenuLeft,
+  MenuRight,
 };
 
 const loadIcon = (

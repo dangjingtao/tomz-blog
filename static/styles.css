@@ -243,6 +243,23 @@
   --geekblue-9: #061178;
   --geekblue-10: #030852;
 }
+
+:root {
+  --primary-color-1: var(--geekblue-1);
+  --primary-color-2: var(--geekblue-2);
+  --primary-color-3: var(--geekblue-3);
+  --primary-color-4: var(--geekblue-4);
+  --primary-color-5: var(--geekblue-5);
+  --primary-color-6: var(--geekblue-6);
+  --primary-color-7: var(--geekblue-7);
+  --primary-color-8: var(--geekblue-8);
+  --primary-color-9: var(--geekblue-9);
+  --primary-color-10: var(--geekblue-10);
+  --primary-color: var(--geekblue-6);
+  --primary-color-dark: var(--geekblue-7);
+  --primary-color-light: var(--geekblue-5);
+}
+
 * {
   margin: 0;
   padding: 0;
@@ -257,35 +274,24 @@
     "Courier New",
     ; */
 }
-/* Tailwind CSS custom colors */
-.bg-geekblue-1 {
-  background-color: var(--geekblue-1);
-}
-.bg-geekblue-2 {
-  background-color: var(--geekblue-2);
-}
-.bg-geekblue-5 {
-  background-color: var(--geekblue-5);
+
+.hide-scrollbar::-webkit-scrollbar {
+  display: none;
 }
 
-.bg-geekblue-6 {
-  background-color: var(--geekblue-6);
+.hide-scrollbar {
+  -ms-overflow-style: none; /* IE and Edge */
+  scrollbar-width: none; /* Firefox */
 }
 
-.bg-geekblue-7 {
-  background-color: var(--geekblue-7);
+/* 显示滚动条 */
+.show-scrollbar::-webkit-scrollbar {
+  display: block;
 }
-.hover:bg-geekblue-7 {
-  background-color: var(--geekblue-7);
-}
-.bg-geekblue-9 {
-  background-color: var(--geekblue-9);
-}
-.text-geekblue-7 {
-  color: var(--geekblue-7);
-}
-.text-geekblue-9 {
-  color: var(--geekblue-9);
+
+.show-scrollbar {
+  -ms-overflow-style: auto; /* IE and Edge */
+  scrollbar-width: auto; /* Firefox */
 }
 
 .tooltip::before {

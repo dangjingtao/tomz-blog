@@ -3,7 +3,7 @@ class Cookie {
   static set(
     name: string,
     value: string,
-    days: number,
+    days: number = 365,
     path: string = "/",
   ): void {
     const date = new Date();
