@@ -20,7 +20,6 @@ class ClientCache {
   set(key: string, value: string) {
     try {
       const serializedValue = JSON.stringify(value);
-      console.log(22222, key, serializedValue);
       sessionStorage.setItem(key, serializedValue);
     } catch (error) {
       console.error(

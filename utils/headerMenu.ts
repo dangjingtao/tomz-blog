@@ -2,8 +2,9 @@ import { JSX } from "preact/jsx-runtime";
 import { FunctionalComponent } from "preact";
 import config from "@/config/index.ts";
 import clientCache from "@/lib/clientCache.ts";
-import AccountPanel from "@/components/Header/AccountPanel.tsx";
+import AccountPanel from "../islands/Header/AccountPanel.tsx";
 import T from "@/lib/Translate.ts";
+import Cookie from "@/lib/cookie.ts";
 const { GITHUB_CLIENT_ID } = config.github;
 
 export interface NavItem {
@@ -24,6 +25,8 @@ const handleGithubLogin = () => {
 
 const handleSignOut = () => {
   clientCache.set("userInfo", "");
+  // 清理token
+  document.cookie = "token=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/;";
   globalThis.location.href = "/";
 };
 
@@ -31,6 +34,7 @@ const handleToggleLang = () => {
   const lang = clientCache.get("lang");
   const newLang = lang === "en" ? "cn" : "en";
   clientCache.set("lang", newLang);
+  Cookie.set("lang", newLang);
   location.reload();
 };
 
@@ -38,9 +42,13 @@ export const getNavData = (): NavItem[] => {
   const userInfo = clientCache.get("userInfo");
 
   const authedDropDown = [{
-    name: T("Setting"),
+    name: T("Settings"),
     icon: "CogOutlineIcon",
-    href: "/setting/user",
+    href: "/settings/user-settings",
+  }, {
+    name: T("Console"),
+    icon: "ConsoleIcon",
+    href: "/console/user",
   }, {
     name: T("Sign out"),
     icon: "LogoutIcon",
@@ -58,10 +66,6 @@ export const getNavData = (): NavItem[] => {
     {
       name: T("Docs"),
       href: "/docs",
-      children: [
-        { name: "API", href: "#api" },
-        { name: "Guides", href: "#guides" },
-      ],
     },
     { name: T("Blog"), href: "/blog" },
     { name: T("About"), href: "/about" },

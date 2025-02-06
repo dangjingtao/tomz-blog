@@ -1,5 +1,6 @@
 import { useEffect, useState } from "preact/hooks";
 import request from "@/lib/request.ts";
+import clientCache from "@/lib/clientCache.ts";
 
 const useAuth = () => {
   const [result, setResult] = useState<{
@@ -12,29 +13,27 @@ const useAuth = () => {
   });
 
   useEffect(() => {
-    const params = new URLSearchParams(globalThis.location.search);
-    const code = params.get("code");
-
-    if (code) {
+    const { notification_email } = clientCache.get("userInfo") || {};
+    if (!notification_email) {
+      setResult({
+        status: "error",
+        message: "Auth failed: notification_email is not found",
+      });
+      return;
+    } else {
       request({
         url: "/api/user/auth",
-        method: "POST",
-        body: { code },
+        method: "GET",
+        params: { notification_email },
       }).then((res) => {
-        console.log(res);
-        sessionStorage.setItem("userInfo", res.data);
         setResult({ status: "success", message: "Auth successful" });
-        globalThis.location.href = "/setting";
       }).catch((error) => {
         setResult({
           status: "error",
           message: `Auth failed: ${error.message}`,
         });
-        sessionStorage.setItem("userInfo", "");
+        clientCache.set("userInfo", "");
       });
-    } else {
-      setResult({ status: "error", message: "Authorization code is null" });
-      sessionStorage.setItem("userInfo", "");
     }
   }, []);
 

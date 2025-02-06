@@ -1,1 +1,4 @@
-export default () => <div>Redirecting...</div>;
+import GitHubLogin from "@/islands/GitHubLogin/index.tsx";
+export default () => {
+  return <GitHubLogin />;
+};
