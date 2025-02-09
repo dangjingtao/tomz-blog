@@ -31,9 +31,9 @@ const handleSignOut = () => {
 };
 
 const handleToggleLang = () => {
-  const lang = clientCache.get("lang");
-  const newLang = lang === "en" ? "cn" : "en";
-  clientCache.set("lang", newLang);
+  const lang = Cookie.get("lang");
+  const newLang = lang === "EN" ? "CN" : "EN";
+  console.log("newLang", lang, newLang);
   Cookie.set("lang", newLang);
   location.reload();
 };

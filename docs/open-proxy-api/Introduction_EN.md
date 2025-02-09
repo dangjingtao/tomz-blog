@@ -19,7 +19,9 @@
 | Qroq     |                  |                                                              |
 | Gemini   |                  |                                                              |
 
+## Star History
 
+![Star History Chart](https://api.star-history.com/svg?repos=dangjingtao/open-proxy-api&type=Date)
 
 
 

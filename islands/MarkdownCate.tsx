@@ -21,7 +21,6 @@ export const generateNestedList = (headers) => {
 const handleClick = (id) => {
   const uuid = uuidv4(id);
   const element = document.getElementById(uuid);
-  console.log("haha", element);
   if (element) {
     element.scrollIntoView({ behavior: "smooth" });
   }

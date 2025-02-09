@@ -1,46 +1,32 @@
-import { Head } from "$fresh/runtime.ts";
-import { useEffect, useRef, useState } from "preact/hooks";
+import { useRef } from "preact/hooks";
+import { logger } from "@/lib/logger.ts";
+import MarkdownCate from "./MarkdownCate.tsx";
 
 interface MarkdownPageProps {
-  markdownCotent: string;
+  markdownContent: string;
+  toc: any[];
 }
 
 export default function MarkdownPage(
-  { markdownCotent }: MarkdownPageProps,
+  { markdownContent, toc }: MarkdownPageProps,
 ) {
-  if (!markdownCotent) {
-    return <h1>File not found.</h1>;
-  }
-
-  const markdownRef = useRef(null);
-
-  useEffect(() => {
-    const zeroMdElement = document.createElement("zero-md");
-    zeroMdElement.innerHTML = `
-      <style>
-      
-      </style>
-      <script type="text/markdown">${markdownCotent}</script>
-    `;
-    const markdownBody = markdownRef?.current;
-    if (markdownBody) {
-      markdownBody.innerHTML = "";
-      markdownBody.appendChild(zeroMdElement);
-    }
-  }, [markdownCotent]);
+  const containerRef = useRef(null);
 
   return (
     <>
-      <Head>
-        <script
-          type="module"
-          src="https://cdn.jsdelivr.net/npm/zero-md@3?register"
-        >
-        </script>
-      </Head>
-      <main class="flex-1 min-h-full overflow-auto">
-        <div class="bg-white p-10">
-          <div ref={markdownRef} class="markdown-body" />
+      <main class="flex-1 relative min-h-full overflow-auto">
+        <div class="flex gap-5 bg-white p-10">
+          <div class="flex-1 max-w-[calc(100vw-700px)]">
+            <div
+              ref={containerRef}
+              class="markdown-body"
+              dangerouslySetInnerHTML={{ __html: markdownContent }}
+            />
+          </div>
+
+          <div class="w-[300px] max-h-96 overflow-auto sticky top-10">
+            <MarkdownCate toc={toc} />
+          </div>
         </div>
       </main>
     </>

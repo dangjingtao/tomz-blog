@@ -14,7 +14,7 @@ const Header = () => {
           : " text-white"
       }`}
       style={{
-        backgroundImage: isScrolled ? "none" : "url(/images/header.png)",
+        backgroundImage: isScrolled ? "none" : "url(/images/header.webp)",
         backgroundPosition: "center top",
         transition: "all 0.1s",
       }}

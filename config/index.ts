@@ -3,6 +3,7 @@ import { getEnvVariable } from "@/utils/environment.ts";
 const CFG = {
   global: {
     JSON_WEB_TOKEN_SECRET: getEnvVariable("JSON_WEB_TOKEN_SECRET"),
+    LOGGER_LEVEL: "info",
     siteName: "Tomz.io",
     siteDescription: "新时代中国特色经济危机下的个人开发者博客",
     siteKeywords:
@@ -15,6 +16,9 @@ const CFG = {
     GITHUB_CLIENT_ID: getEnvVariable("GITHUB_CLIENT_ID"),
     GITHUB_ACCESS_TOKEN_URL: "https://github.com/login/oauth/access_token",
     GITHUB_USER_API_URL: "https://api.github.com/user",
+    GITHUB_REMOTES: "https://raw.githubusercontent.com",
+    GITHUB_REPO: "dangjingtao/tomz-blog",
+    GITHUB_BRANCH: "main",
   },
 };
 

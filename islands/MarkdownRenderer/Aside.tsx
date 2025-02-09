@@ -8,14 +8,40 @@ import {
 import { useState } from "preact/hooks";
 import loadIcon from "@/lib/loadIcon.tsx";
 
-export default function NestedList({ directoryTree = [], docSpace }) {
-  const [open, setOpen] = useState({});
+interface DirectoryItem {
+  name: string;
+  path?: string;
+  children?: DirectoryItem[];
+}
 
-  const handleClick = (index) => {
+interface NestedListProps {
+  directoryTree: DirectoryItem[];
+  docSpace: string;
+}
+
+const expandAll = (items: DirectoryItem[], level = 0, parentKey = "") => {
+  return items.reduce((acc, item, index) => {
+    const key = `${parentKey}${level}-${index}`;
+    acc[key] = true;
+    if (item.children) {
+      Object.assign(acc, expandAll(item.children, level + 1, `${key}-`));
+    }
+    return acc;
+  }, {});
+};
+
+export default function NestedList(
+  { directoryTree = [], docSpace }: NestedListProps,
+) {
+  const allOpen = expandAll(directoryTree);
+  const [open, setOpen] = useState<{ [key: string]: boolean }>(allOpen);
+
+  const handleClick = (e: Event, index: string) => {
+    e.preventDefault();
     setOpen((prevOpen) => ({ ...prevOpen, [index]: !prevOpen[index] }));
   };
 
-  const renderListItems = (items, level = 0) => {
+  const renderListItems = (items: DirectoryItem[], level = 0) => {
     return items.map((item, index) => (
       <div key={item.name}>
         <ListItemButton
@@ -25,7 +51,7 @@ export default function NestedList({ directoryTree = [], docSpace }) {
           href={item.path && "/docs/" + item.path}
           sx={{ py: 0, minHeight: 32, pl: level * 2 + 2 }}
           onClick={item.children
-            ? () => handleClick(`${level}-${index}`)
+            ? (e) => handleClick(e, `${level}-${index}`)
             : undefined}
         >
           <ListItemText primary={item.name} />
@@ -53,7 +79,7 @@ export default function NestedList({ directoryTree = [], docSpace }) {
         aria-labelledby="nested-list-subheader"
         subheader={
           <ListSubheader component="div" id="nested-list-subheader">
-            <h2 class="text-lg text-slate-900 mb-5">{docSpace}</h2>
+            <h2 class="text-xl text-center text-slate-900 mb-5">{docSpace}</h2>
           </ListSubheader>
         }
       >

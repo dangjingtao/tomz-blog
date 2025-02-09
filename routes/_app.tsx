@@ -20,6 +20,13 @@ export default function App({ Component, state }: PageProps) {
         <meta name="twitter:description" content={CFG.global.siteDescription} />
         <meta name="twitter:image" content={CFG.global.siteImage} />
         <link rel="stylesheet" href="/styles.css" />
+        {
+          /* <link
+          rel="stylesheet"
+          href="https://highlightjs.org/_next/static/css/819c34e530460f7c.css"
+        >
+        </link> */
+        }
       </Head>
       <body>
         <Component />

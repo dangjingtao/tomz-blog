@@ -9,6 +9,7 @@ import * as $_app from "./routes/_app.tsx";
 import * as $_layout from "./routes/_layout.tsx";
 import * as $_middleware from "./routes/_middleware.tsx";
 import * as $about_index from "./routes/about/index.tsx";
+import * as $api_docs_markdown from "./routes/api/docs/markdown.ts";
 import * as $api_index from "./routes/api/index.ts";
 import * as $api_user_auth from "./routes/api/user/auth.ts";
 import * as $api_user_index from "./routes/api/user/index.ts";
@@ -44,11 +45,13 @@ import * as $Header_index from "./islands/Header/index.tsx";
 import * as $MarkdownCate from "./islands/MarkdownCate.tsx";
 import * as $MarkdownPageRenderer from "./islands/MarkdownPageRenderer.tsx";
 import * as $MarkdownRenderer_Aside from "./islands/MarkdownRenderer/Aside.tsx";
-import * as $MarkdownRenderer_Doc from "./islands/MarkdownRenderer/Doc.tsx";
+import * as $MarkdownRenderer_Documents from "./islands/MarkdownRenderer/Documents.tsx";
 import * as $MarkdownRenderer_Main from "./islands/MarkdownRenderer/Main.tsx";
+import * as $MarkdownRenderer_MarkdownCate from "./islands/MarkdownRenderer/MarkdownCate.tsx";
 import * as $Pagination from "./islands/Pagination.tsx";
 import * as $PanelSetting_Panel from "./islands/PanelSetting/Panel.tsx";
 import * as $PanelSetting_index from "./islands/PanelSetting/index.tsx";
+import * as $PostCards_PostCard from "./islands/PostCards/PostCard.tsx";
 import * as $ServiceProviders_ModelCard from "./islands/ServiceProviders/ModelCard.tsx";
 import * as $ServiceProviders_ProviderSetting from "./islands/ServiceProviders/ProviderSetting.tsx";
 import * as $ServiceProviders_SearchNav from "./islands/ServiceProviders/SearchNav.tsx";
@@ -66,6 +69,7 @@ const manifest = {
     "./routes/_layout.tsx": $_layout,
     "./routes/_middleware.tsx": $_middleware,
     "./routes/about/index.tsx": $about_index,
+    "./routes/api/docs/markdown.ts": $api_docs_markdown,
     "./routes/api/index.ts": $api_index,
     "./routes/api/user/auth.ts": $api_user_auth,
     "./routes/api/user/index.ts": $api_user_index,
@@ -104,11 +108,14 @@ const manifest = {
     "./islands/MarkdownCate.tsx": $MarkdownCate,
     "./islands/MarkdownPageRenderer.tsx": $MarkdownPageRenderer,
     "./islands/MarkdownRenderer/Aside.tsx": $MarkdownRenderer_Aside,
-    "./islands/MarkdownRenderer/Doc.tsx": $MarkdownRenderer_Doc,
+    "./islands/MarkdownRenderer/Documents.tsx": $MarkdownRenderer_Documents,
     "./islands/MarkdownRenderer/Main.tsx": $MarkdownRenderer_Main,
+    "./islands/MarkdownRenderer/MarkdownCate.tsx":
+      $MarkdownRenderer_MarkdownCate,
     "./islands/Pagination.tsx": $Pagination,
     "./islands/PanelSetting/Panel.tsx": $PanelSetting_Panel,
     "./islands/PanelSetting/index.tsx": $PanelSetting_index,
+    "./islands/PostCards/PostCard.tsx": $PostCards_PostCard,
     "./islands/ServiceProviders/ModelCard.tsx": $ServiceProviders_ModelCard,
     "./islands/ServiceProviders/ProviderSetting.tsx":
       $ServiceProviders_ProviderSetting,
