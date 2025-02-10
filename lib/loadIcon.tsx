@@ -25,6 +25,7 @@ import MenuDown from "@mdi-preact/MenuDownIcon.js";
 import MenuUp from "@mdi-preact/MenuUpIcon.js";
 import MenuLeft from "@mdi-preact/MenuLeftIcon.js";
 import MenuRight from "@mdi-preact/MenuRightIcon.js";
+import MagnifyIcon from "@mdi-preact/MagnifyIcon.js";
 
 const iconMap: { [key: string]: JSX.ElementType } = {
   TranslateIcon,
@@ -53,6 +54,7 @@ const iconMap: { [key: string]: JSX.ElementType } = {
   MenuUp,
   MenuLeft,
   MenuRight,
+  MagnifyIcon,
 };
 
 const loadIcon = (

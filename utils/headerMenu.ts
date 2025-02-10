@@ -10,6 +10,7 @@ const { GITHUB_CLIENT_ID } = config.github;
 export interface NavItem {
   name?: string | JSX.Element;
   href?: string;
+  panel?: boolean;
   children?: NavItem[];
   onClick?: () => void;
   icon?: string;
@@ -26,7 +27,7 @@ const handleGithubLogin = () => {
 const handleSignOut = () => {
   clientCache.set("userInfo", "");
   // 清理token
-  document.cookie = "token=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/;";
+  Cookie.delete("token");
   globalThis.location.href = "/";
 };
 
@@ -40,6 +41,7 @@ const handleToggleLang = () => {
 
 export const getNavData = (): NavItem[] => {
   const userInfo = clientCache.get("userInfo");
+  const isAuthed = !!(userInfo && Cookie.get("token"));
 
   const authedDropDown = [{
     name: T("Settings"),
@@ -60,14 +62,15 @@ export const getNavData = (): NavItem[] => {
     icon: "GithubIcon",
     onClick: handleGithubLogin,
   }];
-  const loginDropDown = userInfo ? authedDropDown : unAuthedDropDown;
+
+  const loginDropDown = isAuthed ? authedDropDown : unAuthedDropDown;
 
   const navData: NavItem[] = [
+    { name: T("Blog"), href: "/blog" },
     {
       name: T("Docs"),
-      href: "/docs",
+      panel: true,
     },
-    { name: T("Blog"), href: "/blog" },
     { name: T("About"), href: "/about" },
     {
       icon: "TranslateIcon",
@@ -76,7 +79,7 @@ export const getNavData = (): NavItem[] => {
     { icon: "GithubIcon", href: "https://github.com/dangjingtao/tomz-blog" },
     {
       name: userInfo ?? T("Sign in"),
-      icon: userInfo ? "AccountCircleOutlineIcon" : "LoginIcon",
+      icon: isAuthed ? "AccountCircleOutlineIcon" : "LoginIcon",
       extra: userInfo && AccountPanel,
       children: [...loginDropDown],
     },

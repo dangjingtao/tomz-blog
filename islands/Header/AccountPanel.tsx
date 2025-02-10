@@ -13,7 +13,7 @@ interface AccountPanelProps {
 const AccountPanel: FunctionalComponent<AccountPanelProps> = () => {
   const userInfo = clientCache.get("userInfo") as UserInfo;
   return (
-    <div class="p-4 bg-white border-b-slate-200 border">
+    <div class="p-4 bg-white border-b border-b-slate-200">
       <div class="flex items-center">
         <img
           src={userInfo.avatar_url}

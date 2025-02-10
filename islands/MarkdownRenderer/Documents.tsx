@@ -11,7 +11,7 @@ interface MarkdownState {
   markdownContent: string;
   directoryTree: any[];
   docSpace: string;
-  error: string;
+  error?: any;
 }
 
 const initialMarkdownState: MarkdownState = {
@@ -36,16 +36,22 @@ export default function MarkdownPage(props: { path: string }) {
           method: "GET",
           params: { path },
         });
-        const { rawMarkdown, directoryTree, docSpace } = JSON.parse(data);
-        const result: { toc: any[]; markdownContent: string } =
+        const { rawMarkdown, directoryTree, docSpace, error } = JSON.parse(
+          data,
+        );
+        const result: { toc: any[]; markdownContent: string; error: string } =
           await renderMarkdown(rawMarkdown);
-        setMarkdown({
-          ...result,
-          directoryTree,
-          docSpace,
-          loading: false,
-          error: "",
-        });
+        if (error) {
+          throw new Error(error);
+        } else {
+          setMarkdown({
+            ...result,
+            directoryTree,
+            docSpace,
+            loading: false,
+            error: "",
+          });
+        }
       } catch (error) {
         setMarkdown((prev) => ({
           ...prev,
@@ -61,9 +67,8 @@ export default function MarkdownPage(props: { path: string }) {
   if (!error && loading) {
     return <ErrorPage status="loading" />;
   }
-
   if (error) {
-    return <ErrorPage status="500" />;
+    return <ErrorPage status="500" content={error} />;
   }
 
   return (

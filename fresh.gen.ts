@@ -39,6 +39,7 @@ import * as $GitHubLogin_index from "./islands/GitHubLogin/index.tsx";
 import * as $GithubLoginLayout from "./islands/GithubLoginLayout.tsx";
 import * as $Header_AccountPanel from "./islands/Header/AccountPanel.tsx";
 import * as $Header_HeaderNav from "./islands/Header/HeaderNav.tsx";
+import * as $Header_HeaderPanel from "./islands/Header/HeaderPanel.tsx";
 import * as $Header_HeaderSearch from "./islands/Header/HeaderSearch.tsx";
 import * as $Header_Language from "./islands/Header/Language.tsx";
 import * as $Header_index from "./islands/Header/index.tsx";
@@ -102,6 +103,7 @@ const manifest = {
     "./islands/GithubLoginLayout.tsx": $GithubLoginLayout,
     "./islands/Header/AccountPanel.tsx": $Header_AccountPanel,
     "./islands/Header/HeaderNav.tsx": $Header_HeaderNav,
+    "./islands/Header/HeaderPanel.tsx": $Header_HeaderPanel,
     "./islands/Header/HeaderSearch.tsx": $Header_HeaderSearch,
     "./islands/Header/Language.tsx": $Header_Language,
     "./islands/Header/index.tsx": $Header_index,

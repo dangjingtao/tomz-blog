@@ -1,6 +1,5 @@
 import { useEffect, useRef, useState } from "preact/hooks";
 import MagnifyIcon from "@mdi-preact/MagnifyIcon.js";
-import useScroll from "@/hooks/useScroll.ts";
 
 const HeaderSeach = () => {
   const [placeholder, setPlaceholder] = useState("Search...");
@@ -36,7 +35,7 @@ const HeaderSeach = () => {
       <input
         ref={inputRef}
         type="text"
-        className="rounded-lg h-8 pl-10 pr-6 border border-gray-300 bg-white bg-opacity-75 focus:bg-opacity-100 focus:border-blue-500 focus:outline-none focus:ring-2 focus:ring-blue-500 transition duration-300 ease-in-out"
+        className="rounded-lg h-8 pl-10 pr-6 border border-gray-300 bg-white bg-opacity-75 focus:bg-opacity-100 focus:border-primary focus:outline-none focus:ring-2 focus:ring-primary-light transition duration-300 ease-in-out"
         placeholder={placeholder}
       />
       <MagnifyIcon

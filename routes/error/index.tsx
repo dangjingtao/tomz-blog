@@ -52,10 +52,10 @@ export default function (state: State) {
       content: "Please wait while we load the page.",
     },
   };
-  const contentIatm =
+  const contentItem =
     contentMap[status as "401" | "404" | "500" | "403" | "loading"];
-  const title = state.title || contentIatm.title;
-  const content = state.content || contentIatm.content;
+  const title = state.title || contentItem.title;
+  const content = state.content || contentItem.content;
   return (
     <>
       <Head>

@@ -2,17 +2,54 @@ import { useSignal } from "@preact/signals";
 import { useCallback } from "preact/hooks";
 import { getNavData, NavItem } from "../../utils/headerMenu.ts";
 import loadIcon from "@/lib/loadIcon.tsx";
+import HeaderPanel from "@/islands/Header/HeaderPanel.tsx";
+
+import { List, ListItem, ListItemButton } from "@mui/material";
 
 interface ExtendedNavItem extends NavItem {
-  level?: number;
   index?: number;
 }
 
+const DropDownMenu = ({ list = [] }) => {
+  return (
+    <div class="text-gray-700">
+      <List>
+        {list.map(({ name, href, icon, onClick }, i) => (
+          <ListItem disablePadding key={i}>
+            {
+              <ListItemButton
+                component="a"
+                href={href}
+                onClick={!href ? onClick : undefined}
+              >
+                <div class="flex gap-2 text-sm">
+                  {loadIcon(icon ?? "", { size: 20 })} {name}
+                </div>
+              </ListItemButton>
+            }
+          </ListItem>
+        ))}
+      </List>
+    </div>
+  );
+};
+
 const PCNavItem = (
   {
-    itemData: { href, children, name, icon, level = 1, onClick, index, extra },
+    itemData: {
+      href,
+      children,
+      name,
+      icon,
+      onClick,
+      index,
+      extra,
+      panel,
+    },
+    isScrolled,
   }: {
     itemData: ExtendedNavItem;
+    isScrolled: boolean;
   },
 ) => {
   const hasChildren = children && children.length > 0;
@@ -28,6 +65,16 @@ const PCNavItem = (
 
   const Extra = extra;
 
+  const activeStyle = href
+    ? (isScrolled
+      ? "aria-[current]:bg-primary-2"
+      : "aria-[current]:bg-primary-6")
+    : "";
+
+  const hoverStyle = dropDownOpen.value
+    ? (isScrolled ? "bg-primary-1" : "bg-white/10")
+    : "";
+
   const handleMouseLeave = (e: MouseEvent) => {
     const relatedTarget = e.relatedTarget as HTMLElement;
     if (relatedTarget && relatedTarget.closest("li") === e.currentTarget) {
@@ -42,35 +89,30 @@ const PCNavItem = (
   };
   return (
     <li
-      className="relative group h-full"
+      className="relative group h-full z-50"
       onMouseEnter={handleMouseEnter}
       onMouseLeave={handleMouseLeave}
     >
-      <div className="block w-full h-full">
+      <div className="block w-full h-full ">
         <a
           onClick={onClick}
           href={href}
           target={href?.startsWith("http") ? "_blank" : "_self"}
-          className={`block cursor-pointer h-full  ${
-            level === 1
-              ? `${href ? "aria-[current]:bg-blue-300/50" : ""} px-4 ${
-                dropDownOpen.value ? "bg-white/10" : ""
-              }`
-              : `hover:bg-blue-300/30 p-4 pt-2 pb-2 text-gray-700`
-          } no-underline flex items-center`}
+          className={`block z-50 cursor-pointer h-full ${`${activeStyle} px-4 ${hoverStyle}`} no-underline flex items-center`}
         >
           <div class="flex gap-2 text-sm">
             {loadIcon(icon ?? "", { size: 20 })} {name}
           </div>
         </a>
       </div>
+
       {hasChildren && (
         <>
           <ul
-            className={`${dropDownOpen.value ? "block" : "hidden"} absolute ${
-              level === 1
-                ? `top-full ${index === 5 ? "right-0" : "left-0"}`
-                : "left-full top-0"
+            className={`${
+              dropDownOpen.value ? "block" : "hidden"
+            } absolute top-full ${
+              index === 5 ? "right-0" : "left-0"
             } bg-white rounded shadow-lg min-w-48`}
           >
             <div
@@ -78,20 +120,27 @@ const PCNavItem = (
               style={{ top: "-8px", ...arrowStyle }}
             />
             {extra && Extra && <Extra />}
-            {children.map((child, i) => (
-              <PCNavItem
-                key={i}
-                itemData={{ ...child, level: level + 1 }}
-              />
-            ))}
+            <DropDownMenu list={children} />
           </ul>
         </>
+      )}
+
+      {panel && (
+        <div
+          style={{
+            boxShadow:
+              "inset 0 4px 6px -4px rgba(0, 0, 0, 0.2), 0 4px 6px -1px rgba(0, 0, 0, 0.1)",
+          }}
+          className="bg-opacity-90 backdrop-filter backdrop-blur-lg fixed z-10 left-0 right-0 overflow-hidden bg-white h-0 top-[52px] group-hover:h-40 transition-all duration-100"
+        >
+          <HeaderPanel />
+        </div>
       )}
     </li>
   );
 };
 
-const HeaderNav = () => {
+const HeaderNav = ({ isScrolled }: { isScrolled: boolean }) => {
   const navData = getNavData();
 
   const menuOpen = useSignal(false);
@@ -102,11 +151,12 @@ const HeaderNav = () => {
 
   return (
     <>
-      <nav class="absolute right-5 hidden md:flex gap-4 ml-4 transition-all duration-300 ease-in-out h-full">
+      <nav class="absolute z-50 right-5 hidden md:flex gap-4 ml-4 transition-all duration-300 ease-in-out h-full">
         <ul class="list-none p-0 m-0 flex flex-col md:flex-row h-full">
           {navData.map((props, i) => (
             <PCNavItem
               key={i}
+              isScrolled={isScrolled}
               itemData={{ ...props, index: i }}
             />
           ))}

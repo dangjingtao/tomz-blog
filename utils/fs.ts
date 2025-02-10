@@ -136,12 +136,21 @@ export const staticMarkdownHandler = async (
   const lang = Cookie.get("lang") || "CN";
   const workDir = path.split("/")[0];
 
-  const { directoryTree } = await getDirectoryTree(workDir, lang);
+  const { directoryTree, error: getDirectoryTreeError } =
+    await getDirectoryTree(workDir, lang);
 
-  const { rawMarkdown } = await fetchMarkdown(path, lang, scope);
+  const { rawMarkdown, error: fetchMarkdownError } = await fetchMarkdown(
+    path,
+    lang,
+    scope,
+  );
+  const errorsArray = [fetchMarkdownError, getDirectoryTreeError].filter((e) =>
+    !!e
+  );
+  const errors = errorsArray.length ? errorsArray.join("\n") : null;
 
   const data: StaticMarkdownResponseData = {
-    error: null,
+    error: errors || null,
     docSpace: workDir,
     rawMarkdown,
     directoryTree,
